@@ -16,8 +16,8 @@
 //点击之后的相关判断
 var config = {
         scheme_IOS: 'dsblock://',   //iOS发开给
-        scheme_Adr: 'block://ds/wakeapp',   //Android开发给
-        download_url: '下载链接',
+        scheme_Adr: 'app_ytcj://yetancaijing.com/open_ytcj',   //Android开发给
+        download_url: 'www.baidu.com',
         timeout: 2000
  };
  openclient();
@@ -32,7 +32,7 @@ var config = {
      }else if(navigator.userAgent.match(/(iPhone|iPad|iPod|iOS)/i) != null) {//iOS
         ifr.src = (config.scheme_IOS + "?Type=2&"+"MatchId="+matchid);
      } else {//PC端无法打开app。点击后直接下载安卓安装包即可
-        ifr.src = "下载链接";
+        ifr.src = "www.baidu.com";
      }
      ifr.style.display = 'none';
      document.body.appendChild(ifr);
@@ -40,11 +40,11 @@ var config = {
 
      //根据当前平台修改打开失败的跳转链接
      if (navigator.userAgent.match(/(iPhone|iPad|iPod|iOS)/i) != null) {//iOS跳至App Store
-         config.download_url = 'APP在App Store的链接地址';
+         config.download_url = 'www.baidu.com';
      } else if (navigator.userAgent.match(/Android/i) != null) {//安卓直接下载
-         config.download_url = '下载链接';
+         config.download_url = 'www.baidu.com';
      }else{//PC
-         config.download_url = '下载链接';
+         config.download_url = 'www.baidu.com';
      }
      
     //打开失败要执行的操作
