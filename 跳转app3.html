@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div class="down_right">
+                <a href="javascript:void(0);" onclick="fn();" id="openapp">打开星域</a></div>
+</body>
+</html>
+
+<script>
+var articleId = getParamValue("ArticleId");
+if (isIos()) {
+  if (is_qqbrowser()) {//QQ里面需要通过这种方式才可以打开
+      $("#openapp").attr("href", createUrl("dsblockchain://", {'Type': 1, 'PostType': 1, 'PostId': articleId}));
+  }
+}
+
+function fn() {
+  if (is_weixin() || isWeibo()) {//微信，微博都无法直接下载，只能打开中转页
+      window.location.href = "中转页地址"
+  } else {
+      var config = {
+          scheme_IOS: 'dsblock://',
+          scheme_Adr: 'block://ds/wakeapp',
+          download_url: '中转页',
+          timeout: 1000
+      };
+      openclient();
+      function openclient() {
+
+          var startTime = Date.now();
+          var ifr = document.createElement('iframe');
+          if (navigator.userAgent.match(/Android/i) != null) {
+              ifr.src = createUrl("block://ds/wakeapp", {'Type': 1, 'PostType': 1, 'PostId': articleId});
+          } else if (navigator.userAgent.match(/(iPhone|iPad|iPod|iOS)/i) != null) {
+              window.location.href = createUrl("dsblock://", {'Type': 1, 'PostType': 1, 'PostId': articleId});
+          } else {//pc端
+              ifr.src = "apk下载地址";
+          }
+          ifr.style.display = 'none';
+          document.body.appendChild(ifr);
+          if (navigator.userAgent.match(/Android/i) != null){
+              config.download_url = createUrl("中转页.html",
+                  {'Type': 1, 'ArticleId': articleId});
+          }else if (navigator.userAgent.match(/(iPhone|iPad|iPod|iOS)/i) != null){
+              config.download_url = 'App Store地址';
+          }else {//pc
+              config.download_url = 'apk下载地址';
+          }
+          var t = setTimeout(function () {
+              var endTime = Date.now();
+              if (!startTime || endTime - startTime < config.timeout + 2500) {
+                  document.body.removeChild(ifr);
+                  window.location.href = config.download_url;
+              }
+          }, config.timeout);
+          window.blur = function () {
+              clearTimeout(t);
+          }
+      }
+  }
+
+}  
+
+function is_weixin() {
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.match(/MicroMessenger/i) == "micromessenger") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function is_qqbrowser() {
+    var ua = navigator.userAgent.toLowerCase();
+    if (/mqqbrowser|qq/i.test(ua)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function isWeibo() {
+    var ua = window.navigator.userAgent;
+    return !!/__weibo__/.exec(ua);
+}
+
+function isIos() {
+    return navigator.userAgent.match(/(iPhone|iPad|iPod|iOS)/i) != null;
+}
+
+function isSafari() {
+    var ua = window.navigator.userAgent;
+    return !!/Version[|\/]([\w.]+)(\s\w.+)?\s?Safari|like\sGecko\)\sMobile\/\w{3,}$/.exec(ua);
+}
+
+function createUrl(url, obj) {//拼接跳转链接及参数生成新的链接
+    let params = [];
+    for (let p in obj) {
+        if (obj[p] != null && obj[p] != '') {
+            params.push(p + '=' + obj[p])
+        }
+    }
+    return url + '?' + params.join("&");
+}
+
+function getParamValue(name) {//获取地址栏指定参数的参数值
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        return unescape(r[2]);
+    } else {
+        return null;
+    }
+}
+
+
+</script>
