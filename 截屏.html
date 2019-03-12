@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/html2canvas/0.4.1/html2canvas.js"></script>
+
+
+</head>
+
+<body>
+    <section id="section">
+        　　<p>当前积分<span>365</span></p>
+        　　<p>参与项目数量<span>12</span></p>
+        　　<p>募捐金额<span>45678</span>元</p>
+        　　<p>荣誉等级<span>海绵宝宝</span></p>
+        　　<div id="qrcode">
+            　　</div>
+    </section>
+    <div id='photo'>
+        　　<span>长按图片保存和分享</span>
+    </div>
+    　<button onclick="saveImg()">生成图片</button>
+</body>
+
+</html>
+<script>
+    function saveImg() {
+        var shareContent = document.getElementById("section");
+        html2canvas(shareContent, {
+            onrendered: function (canvas) {
+                var img = new Image();
+                img.src = canvas.toDataURL();
+                document.getElementById("photo").appendChild(img);
+            }
+        })
+    }
+</script>
