@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <!-- 打开app按钮 -->
+        <span id="open"></span>
+    
+</body>
+</html>
+<script>
+//点击之后的相关判断
+var config = {
+        scheme_IOS: 'dsblock://',   //iOS发开给
+        scheme_Adr: 'block://ds/wakeapp',   //Android开发给
+        download_url: '下载链接',
+        timeout: 2000
+ };
+ openclient();
+ function openclient() {
+     var startTime = Date.now();
+
+     //---点击打开之后--尝试打开APP---start------
+     var ifr = document.createElement('iframe');
+     if (navigator.userAgent.match(/Android/i) != null) {//Android
+        //传递参数给客户端
+        ifr.src = (config.scheme_Adr + "?Type=2&"+"MatchId="+matchid);
+     }else if(navigator.userAgent.match(/(iPhone|iPad|iPod|iOS)/i) != null) {//iOS
+        ifr.src = (config.scheme_IOS + "?Type=2&"+"MatchId="+matchid);
+     } else {//PC端无法打开app。点击后直接下载安卓安装包即可
+        ifr.src = "下载链接";
+     }
+     ifr.style.display = 'none';
+     document.body.appendChild(ifr);
+    //---点击打开之后--尝试打开APP---end------
+
+     //根据当前平台修改打开失败的跳转链接
+     if (navigator.userAgent.match(/(iPhone|iPad|iPod|iOS)/i) != null) {//iOS跳至App Store
+         config.download_url = 'APP在App Store的链接地址';
+     } else if (navigator.userAgent.match(/Android/i) != null) {//安卓直接下载
+         config.download_url = '下载链接';
+     }else{//PC
+         config.download_url = '下载链接';
+     }
+     
+    //打开失败要执行的操作
+     var t = setTimeout(function () {
+         var endTime = Date.now();
+         if (!startTime || endTime - startTime < config.timeout + 200) {
+             window.location = config.download_url;
+         }
+     }, config.timeout);
+     //当前页面失去焦点，清除延时任务，不提示用户下载
+     window.blur = function () {
+         clearTimeout(t);
+     }
+ }
+</script>
