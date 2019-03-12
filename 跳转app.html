@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body id="body">
+		<a href="javascript:;" id="openApp" style="font-size: 30px;">打开客户端</a>
+	</body>	
+	<script type="text/javascript">
+	document.getElementById('openApp').onclick = function(e) {
+		//ios
+		if(navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
+ 
+			var browser = navigator.userAgent.toLowerCase();
+ 
+			if(browser.match(/micromessenger/i)) {
+				//微信内置浏览器
+				window.location.href ="hengtaixin://";
+				window.setTimeout(function() {
+					window.location.href = "https://itunes.apple.com/us/app/cheng-shi-gao-er-fu/id1008696844?mt=8&uo=4";
+				}, 1000)
+				return
+			} else {
+				window.location.href ="hengtaixin://"; //ios app协议，由ios同事提供
+				window.setTimeout(function() {
+					window.location.href = "https://itunes.apple.com/us/app/cheng-shi-gao-er-fu/id1008696844?mt=8&uo=4";
+				}, 2000)
+				return
+			}
+		}
+ 
+		if(navigator.userAgent.match(/android/i)) {
+			//Android
+			window.location.href = "app://city_golf";//安卓协议，由安卓同事提供
+			window.setTimeout(function() {
+				
+				window.location.href = "http://192.168.10.157:8080/download/ytcj_2.0.6_beta_20190309.apk"
+			}, 2000)
+			return
+		}
+ 
+	};
+</script>
+
