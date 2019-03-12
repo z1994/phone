@@ -40,7 +40,7 @@ function fn() {
           } else if (navigator.userAgent.match(/(iPhone|iPad|iPod|iOS)/i) != null) {
               window.location.href = createUrl("dsblock://", {'Type': 1, 'PostType': 1, 'PostId': articleId});
           } else {//pc端
-              ifr.src = "apk下载地址";
+              ifr.src = "http://192.168.10.157:8080/download/ytcj_2.0.6_beta_20190309.apk";
           }
           ifr.style.display = 'none';
           document.body.appendChild(ifr);
@@ -50,7 +50,7 @@ function fn() {
           }else if (navigator.userAgent.match(/(iPhone|iPad|iPod|iOS)/i) != null){
               config.download_url = 'App Store地址';
           }else {//pc
-              config.download_url = 'apk下载地址';
+              config.download_url = 'http://192.168.10.157:8080/download/ytcj_2.0.6_beta_20190309.apk';
           }
           var t = setTimeout(function () {
               var endTime = Date.now();
