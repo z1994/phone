@@ -8,7 +8,7 @@
 </head>
 <body>
         <!-- 打开app按钮 -->
-        <span id="open">打开app按钮</span>
+        <span id="open"></span>
     
 </body>
 </html>
@@ -42,9 +42,9 @@ var config = {
      if (navigator.userAgent.match(/(iPhone|iPad|iPod|iOS)/i) != null) {//iOS跳至App Store
          config.download_url = 'www.baidu.com';
      } else if (navigator.userAgent.match(/Android/i) != null) {//安卓直接下载
-         config.download_url = 'www.baidu.com';
+         config.download_url = '下载链接';
      }else{//PC
-         config.download_url = 'www.baidu.com';
+         config.download_url = '下载链接';
      }
      
     //打开失败要执行的操作
