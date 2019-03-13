@@ -206,7 +206,7 @@
                             Android版下载
                             </a>
                     </div>
-            <a href="javascript:testApp('app_ytcj://yetancaijing.com/open_ytcj')" class="dl-btn" id="download">打开APP</a> 
+
                 <div id="copyright">
                     <p>深圳市伙伴行网络科技有限公司</p>
                     <p class="copy">copyright©2018</p>
@@ -218,7 +218,19 @@
     function checkPlatform() {
         if (/android/i.test(navigator.userAgent)) {
             //alert("This is Android'browser.")//这是Android平台下浏览器
-            window.location = "http://192.168.10.157:8080/download/ytcj_2.0.6_beta_20190309.apk"
+            if(navigator.userAgent.match(/android/i)) {
+			//Android
+			window.location.href = "app_ytcj://yetancaijing.com/open_ytcj";//安卓协议，由安卓同事提供
+			window.setTimeout(function() {
+				
+				window.location = "http://192.168.10.157:8080/download/ytcj_2.0.6_beta_20190309.apk"
+			}, 2000)
+			return
+		}
+
+
+
+            // window.location = "http://192.168.10.157:8080/download/ytcj_2.0.6_beta_20190309.apk"
         }
         if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
             //alert("This is iOS'browser.");//这是iOS平台下浏览器
