@@ -7,36 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-        <a href="javascript:testApp('appback://')" class="dl-btn" id="download">打开APP</a> 
+        <a class="button-download"  href="app_ytcj://yetancaijing.com/open_ytcj"><span>启动app</span></a> 
+        <intent-filter>  
+                <action android:name="android.intent.action.VIEW"/>  
+                <category android:name="android.intent.category.DEFAULT"/>  
+                <category android:name="android.intent.category.BROWSABLE"/>  
+                <data android:scheme="app_ytcj">  
+        </intent-filter>
 </body>
 </html>
-<script>
-    function testApp(url) { 
- 4            timeout, t = 1000, hasApp = true; 
-//  5           setTimeout(function () { 
-//  6             if (!hasApp) { 
-//  7                   //未安装app
-//  8                   if(browser.versions.ios){
-//  9                     window.location.href = '${url_ios}';  //ios下载地址
-// 10                 }else{
-// 11                     window.location.href = '${url_android}';    //安卓下载地址
-// 12                    }
-// 13             }
-// 14             document.body.removeChild(ifr); 
-// 15           }, 2000) 
-16           
-// 17           var t1 = Date.now(); 
-// 18           var ifr = document.createElement("iframe"); 
-// 19           ifr.setAttribute('src', url); 
-// 20           ifr.setAttribute('style', 'display:none'); 
-// 21           document.body.appendChild(ifr); 
-// 22           timeout = setTimeout(function () { 
-// 23              var t2 = Date.now(); 
-// 24              if (!t1 || t2 - t1 < t + 100) { 
-// 25                hasApp = false; 
-// 26              } 
-// 27           }, t); 
-28         } 
-29         
-
-</script>
