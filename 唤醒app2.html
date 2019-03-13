@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+<p id="zjmobliestart">唤醒浙江移动手机营业厅！</p>
+</body>
+</html>
+<script>
+function applink(){   
+    window.location = 'app_ytcj://yetancaijing.com/open_ytcj';  
+        var clickedAt = +new Date;  
+         setTimeout(function(){
+             !window.document.webkitHidden && setTimeout(function(){ 
+                   if (+new Date - clickedAt < 2000){  
+                       window.location = 'https://www.baidu.com';  
+                   }  
+             }, 500);       
+         }, 500)   
+     
+}
+applink();
+
+</script>
