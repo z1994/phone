@@ -17,6 +17,8 @@
 <a href="app_ytcj://yetancaijing.com/open_ytcj" id="zjmobliestart" target="_blank">唤醒浙江移动手机营业厅！</a>
 
 <script type="text/javascript"> 
+
+document.getElementById("zjmobliestart").onclick = applink();  
 function applink(){  
     return function(){  
         var clickedAt = +new Date;  
@@ -29,7 +31,7 @@ function applink(){
          }, 500)   
     };  
 }  
-document.getElementById("zjmobliestart").onclick = applink();  
+
 </script>   
 </body>
 </html>
