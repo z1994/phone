@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form  id="signForm" action="doSignIn">
+
+       <input type="email" id="email"  placeholder="Email address" name="email" value="" required autofocus>
+
+       <input type="password" id="password1" placeholder="Your Password" name="password1" value="" required>
+
+       <input type="password" id="password2"  placeholder="Sure Password" name="password2" value="" required>
+
+       <div id="errorMessage"></div>
+
+       <button  type="button" onclick="checkPassword()">注  册</button>
+
+    </form>
+</body>
+
+</html>
+
+
+<script>
+    function checkPassword() {
+
+        var email = document.getElementById("email").value;
+
+        var password1 = document.getElementById("password1").value;
+
+        var password2 = document.getElementById("password2").value;
+
+        var errorMessage;
+
+        if (email == "") {
+
+            errorMessage = document.getElementById("errorMessage");
+
+            errorMessage.innerHTML = "请输入邮箱!";
+
+        } else if (password1 == "" || password2 == "") {
+
+            errorMessage = document.getElementById("errorMessage");
+
+            errorMessage.innerHTML = "请输入密码!";
+
+        } else if (password1 != password2) {
+
+            errorMessage = document.getElementById("errorMessage");
+
+            errorMessage.innerHTML = "密码不一致!";
+
+        } else {
+
+            document.getElementById("signForm").submit();
+
+        }
+
+    }
+</script>
