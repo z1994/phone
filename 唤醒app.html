@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+// 给原生传递数据
+function loadURL(url) {
+  var iFrame;
+  var u = navigator.userAgent;
+  var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+  var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+  if (isAndroid) {
+    //安卓终端使用iframe
+    iFrame = document.createElement("iframe");
+    iFrame.setAttribute("src", "app_ytcj://yetancaijing.com/open_ytcj");
+    iFrame.setAttribute("style", "display:block;");
+    iFrame.setAttribute("height", "10px");
+    iFrame.setAttribute("width", "10px");
+    iFrame.setAttribute("frameborder", "0");
+    document.body.appendChild(iFrame);
+    // 发起请求后这个 iFrame 就没用了，所以把它从 dom 上移除掉
+    iFrame.parentNode.removeChild(iFrame);
+    iFrame = null;
+  } else if (isiOS) {
+    //iOS终端直接页面跳转
+    window.location.href = url;
+    // 如果用户没有安装淘宝APP，则提示用户去安装淘宝
+    setTimeout(() => {
+        alert('请去应用市场下载App') // 这里可以自行写一个延时关闭的弹窗，也可以跳转至app下载地址，我这里就偷懒了
+    }, 2000);
+  } else {
+    window.location.href = url;
+  }
+}
+</script>
