@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <div onclick="loadURL()">打开APP</div>
     
 </body>
 </html>
@@ -19,6 +20,7 @@ function loadURL(url) {
   var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
   if (isAndroid) {
     //安卓终端使用iframe
+    alert(anzhuo)
     iFrame = document.createElement("iframe");
     iFrame.setAttribute("src", "app_ytcj://yetancaijing.com/open_ytcj");
     iFrame.setAttribute("style", "display:block;");
