@@ -14,11 +14,11 @@
 
 <script>
 var articleId = getParamValue("ArticleId");
-if (isIos()) {
-  if (is_qqbrowser()) {//QQ里面需要通过这种方式才可以打开
-      $("#openapp").attr("href", createUrl("dsblockchain://", {'Type': 1, 'PostType': 1, 'PostId': articleId}));
-  }
-}
+// if (isIos()) {
+//   if (is_qqbrowser()) {//QQ里面需要通过这种方式才可以打开
+//       $("#openapp").attr("href", createUrl("dsblockchain://", {'Type': 1, 'PostType': 1, 'PostId': articleId}));
+//   }
+// }
 
 function fn() {
   if (is_weixin() || isWeibo()) {//微信，微博都无法直接下载，只能打开中转页
