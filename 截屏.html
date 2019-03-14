@@ -6,14 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="https://cdn.bootcss.com/html2canvas/0.4.1/html2canvas.js"></script>
+    
 
-
+<style>
+.img{
+    opacity: 0;
+}
+</style>
 </head>
 
 <body>
     <section id="section">
         　　<p>当前积分<span>365</span></p>
+        <img class="img" src="./imgs/A.png" alt="">
         　　<p>参与项目1数量<span>12</span></p>
         　　<p>募捐金额<span>45678</span>元</p>
         　　<p>荣誉等级<span>海绵宝宝</span></p>
@@ -22,11 +27,15 @@
     </section>
     <div id='photo'>
         　　<span>长按图片保存和分享</span>
+        <!-- <img id="img" src=""> -->
     </div>
-    　<button onclick="saveImg()">生成图片</button>
+
 </body>
 
 </html>
+
+<script src="https://cdn.bootcss.com/html2canvas/0.4.1/html2canvas.js"></script>
+
 <script>
     function saveImg() {
         var shareContent = document.getElementById("section");
@@ -36,6 +45,24 @@
                 img.src = canvas.toDataURL();
                 document.getElementById("photo").appendChild(img);
             }
-        })
+        })    
     }
+
+
+// var img=document.getElementById("img")
+
+//     function saveImg(){
+//         var shareContent = document.getElementById("section");
+// 　　　　　　　　html2canvas( shareContent,{
+// 　　　　　　　　　　onrendered: function(canvas){
+// 　　　　　　　　　　this.url = canvas.toDataURL() ;　　　　　　　　
+// 　　　　　　　　}
+// 　　　　　　})
+// 　　　　}
+    
+
+// setTimeout(function(){saveImg()},1000);
+   
+
+
 </script>

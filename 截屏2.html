@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>html2canvas-demo</title>
+    <meta charset="utf-8" />
+    <style>
+      
+    </style>
+</head>
+<body>
+    <div class="pageTwo">
+        <!--  要截图的区域，因为是动态生成的答案， 所以写入了js -->
+        <div class="con01" id="con"></div> 
+        
+        <!--截图生成图片所存放的url-->   
+        <img id="screenShotImg" class="pic">
+        <!--  截图按钮  -->
+        <img src="./imgs/A.png" class="share" /> 
+        <p class="share_txt">长按保存，分享朋友圈引爆颜值暗战！</p>
+    </div>
+</body>
+</html>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/html2canvas.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+        document.querySelector('.share').onclick = function(){   
+
+                  html2canvas(document.querySelector("#con")).then(function (canvas) {
+
+                  //获取截取图片路径
+
+                  var base64Url = canvas.toDataURL('image/png');
+
+                  //存入页面指定位置
+
+                  document.getElementById("screenShotImg").src = base64Url;
+
+                  //后台操作处理
+
+                  var base64 = "<img src=" + base64Url + " />"
+
+                  $('.share').css('display','none');
+
+                  $('.share_txt').css('display','block');
+
+               });
+
+        }
+
+    });
+
+</script>
