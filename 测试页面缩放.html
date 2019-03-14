@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 视图窗口，移动端特属的标签。 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <!-- 是否启动webapp功能，会删除默认的苹果工具栏和菜单栏。 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 这个主要是根据实际的页面设计的主体色为搭配来进行设置。 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- 忽略页面中的数字识别为电话号码,email识别 -->
+    <meta name="format-detection"content="telephone=no, email=no" />
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app"> 
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>Document</title>
+    <style>
+            header {
+                margin-top: 9px;
+                text-align: center;
+            }
+    
+            .header-img {
+                width: 116px;
+            }
+    
+    
+            title {
+                display: block;
+            }
+    
+            .total-container {
+                text-align: center;
+                margin-top: 16px;
+                line-height: 46px;
+            }
+    
+            .total-text {
+                font-size: 30px;
+            }
+    
+            .total {
+                font-size: 60px;
+                font-family: SYHT;
+                color: #ff513a;
+                text-shadow: #000 0px 0px 3px;
+            }
+    
+            .content {
+                position: relative;
+            }
+    
+            .content-bg {
+                margin-left: 5px;
+                width: 94%;
+            }
+    
+            .content_container {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                top: 43px;
+                left: 24px;
+                width: 85.5%;
+            }
+    
+            .content_title {
+                text-align: center;
+                font-size: 27px;
+                font-weight: 600;
+            }
+    
+            .content_img {
+                margin: 9px 0 21px 0;
+                width: 210px;
+                height: 135px;
+            }
+    
+            .row {
+                line-height: 24px;
+                font-size: 15px
+            }
+    
+            .footer-nav {
+                margin: 20px 0 12px 0;
+                padding: 0 16px 0 14px;
+                line-height: 25px;
+                text-align: center;
+                font-size: 13px;
+                font-weight: 600;
+                background: #ffcac4;
+            }
+    
+            .footer-content {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                height: 58px;
+                letter-spacing: 3px;
+                font-size: 9px;
+            }
+    
+            .logo {
+                margin: 5px 0 2px 0;
+                width: 82px;
+            }
+    
+            .around {
+                border-radius: 8px;
+                border: solid 1px #FF513A;
+            }
+    
+            .code {
+                width: 50px;
+                margin: 3px;
+            }
+    
+            @media all and (max-width:320px) {
+                .content_img {  
+                    width: 148px;
+                    height:95px;
+                }
+                .footer-text{
+                    display: inline-block;
+                    margin-bottom: 6px;
+                }
+            }
+        
+        </style>
+</head>
+<body>
+    
+        <header>
+            <img class="header-img" src="./imgs/成绩单.png" alt="">
+        </header>
+
+
+            <div class="total-container">
+                <span class="total">15</span>
+                <span class="total-text">分</span>
+            </div>
+
+
+
+    <div class="content">
+        <img class="content-bg" src="./imgs/背景1.png" alt="">
+
+        <div class="content_container">
+            <div class="content_title">
+                <span>知识浅薄型</span>
+            </div>
+
+            <img class="content_img" src="./imgs/图层 1.png" alt="">
+
+            <div class="row">
+                <span>“我是谁” “我在哪？”</span>
+            </div>
+            <div class="row">
+                <span>二次元的兄弟，快回神！</span>
+            </div>
+            <div class="row">
+                <span>再不加油，新手村在等你</span>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+    <footer>
+        <div class="footer-nav">
+            <span>长按保存图片</span>
+        </div>
+
+        <div class="footer-content">
+            <div>
+            <div class="around">
+                <img class="code" src="./imgs/二维码.png" alt="">
+            </div>
+            </div>
+            <img class="logo" src="./imgs/矢量智能对象.png" alt="">
+            <span class="footer-text">提升中产阶级理财决策效率</span>
+        </div>
+    </footer>
+
+
+
+</body>
+</html>
