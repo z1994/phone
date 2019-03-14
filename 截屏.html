@@ -12,20 +12,28 @@
 
 </style>
 </head>
+<style>
+#photo{
+    width: 100vw;
+}
+#qrcode{
+    width: 100vw;
+}
+</style>
 
-<body>
+<body onresize="myFunction()">
     <section id="section">
         　　<p>当前积分<span>365</span></p>
         <img class="img" src="./imgs/A.png" alt="">
         　　<p>参与项目1数量<span>12</span></p>
         　　<p>募捐金额<span>45678</span>元</p>
         　　<p>荣誉等级<span>海绵宝宝</span></p>
-        　　<div id="qrcode">
-            　　</div>
+        　　<div id="qrcode"></div>
+            　　
     </section>
     <div id='photo'>
         　　<span>长按图片保存和分享</span>
-        <!-- <img id="img" src=""> -->
+        
     </div>
 
 </body>
@@ -39,6 +47,8 @@
 <script src="./js/html2canvas.svg.min.js"></script>
 
 <script>
+     var w = window.outerWidth;
+    var h = window.outerHeight;
 
 
     function saveImg() {
@@ -53,11 +63,16 @@
         html2canvas(shareContent, {
             useCORS: true,
             scale: 2,
+            width: w,
+            height: h,
             onrendered: function (canvas) {
                 
                 var img = new Image();
                 img.src = canvas.toDataURL();
-                document.getElementById("photo").appendChild(img);
+             var newimg=document.getElementById("photo").appendChild(img);
+                console.log(w)
+                console.log(h)
+                newimg.style.width="100vw"
             }
         })    
     }
