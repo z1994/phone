@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta  charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 视图窗口，移动端特属的标签。 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <!-- 是否启动webapp功能，会删除默认的苹果工具栏和菜单栏。 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 这个主要是根据实际的页面设计的主体色为搭配来进行设置。 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- 忽略页面中的数字识别为电话号码,email识别 -->
+    <meta name="format-detection"content="telephone=no, email=no" />
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>招财卡会员测评</title>
+
+    <link rel="stylesheet" type="text/css" href="https://www.huangwx.cn/css/sweetalert.css">
+    <script type="text/javascript" src="https://www.huangwx.cn/js/sweetalert-dev.js"></script>
+
+    <style>
+        body{
+            margin: 0;
+        }
+        .title {
+            display: inline-block;
+        }
+
+        .member-img {
+            padding: 19px 5vw 0 5vw;
+            width: 89.77vw;
+            overflow: hidden;
+        }
+
+        .test-img {
+            padding: 21px 6vw 0 6vw;
+            width: 87.24vw;
+            overflow: hidden;
+        }
+
+
+        p {
+            margin: 0;
+        }
+
+        .content {
+            position: relative;
+            font-family: serif;
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .content-bg {
+            padding: 18px 3vw 0 1.8vw;
+            width: 93.63%;
+            overflow: hidden;
+        }
+
+        .content-list {
+            position: absolute;
+            top: 0;
+            margin: 65px 0 0 39px;
+
+        }
+
+        .name {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .input-name {
+
+            padding-left: 2vw;
+            width: 18vw;
+            outline: none !important;
+            border: none;
+            border-bottom: solid 1px #979797;
+            font-size: 16px;
+            font-family: serif;
+
+        }
+
+        #alert-name {
+            position: absolute;
+            display: none;
+            top: -5px;
+            left: 75px;
+            color: red;
+            font-size: 21px;
+        }
+
+        label {
+            display: flex;
+            align-items: flex-end;
+            width: 20vw;
+            font-size: 15px;
+        }
+
+        input {
+            margin-right: 6px;
+            width: 18px;
+			height: 20px;
+            outline: none !important;
+            -webkit-appearance: none;
+            border-radius: 0;
+			
+        }
+		.input-sex{
+		    margin-right: 6px;
+            width: 18px;
+			height: 20px;
+            outline: none !important;
+            -webkit-appearance: none;
+            border-radius: 50%;
+			border:none !important;
+			background:#fff;
+		}
+
+        input::before {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            vertical-align: middle;
+            border: solid 1px #d6d6d6;
+            background: #fff;
+            content: "";
+            justify-content: space-between
+        }
+
+        input:checked::before {
+            background: url(../../../static/home/imgs/对号.png)no-repeat 0 70%/100%;
+        }
+
+        .input-texture {
+            width: 17%;
+        }
+
+
+
+        .tel {
+            position: relative;
+            margin-top: 19px;
+        }
+
+        .tel-input {
+            width: 56vw;
+            border: none;
+            border-bottom: solid 1px #979797;
+            font-size: 15px
+        }
+
+        #alert-tel {
+            position: absolute;
+            display: none;
+            top: -5px;
+            font-size: 21px;
+            left: 80px;
+            color: red;
+        }
+
+
+        .add {
+            position: relative;
+            margin-top: 19px;
+        }
+
+        .add-input {
+
+            width: 56vw;
+            border: none;
+            border-bottom: solid 1px #979797;
+            font-size: 15px
+        }
+
+        #alert-add {
+            position: absolute;
+            display: none;
+            left: 80px;
+            top: -5px;
+            color: red;
+            font-size: 21px;
+        }
+
+
+        /*适配i5*/
+        @media all and (max-width:320px) {
+            .tel{
+                margin-top: 18px;
+            }
+            .add{
+                margin-top: 18px;
+            }
+            label{
+                height: 1px;
+            }
+        }
+
+
+        /*适配i6plus*/
+        @media all and (min-width:414px) {
+            .content-list{
+                margin: 79px 0 0 59px;
+            }
+        }
+
+
+
+
+        /*适配ipad     */
+        @media all and (min-width:767px) {
+            .content-list{
+                position: absolute;
+                top: 0;
+                margin: 126px 0 0px 104px;
+            }
+            .content{
+                font-size: 26px;
+            }
+            label{
+                width: 13vw;
+                font-size: 25px;
+            }
+            .tel{
+                margin-top: 60px;
+            }
+            .add{
+                margin-top: 60px;
+            }
+            .input-name{
+                font-size: 25px;
+            }
+            .tel-input{
+                font-size: 25px;
+            }
+            .add-input{
+                font-size: 25px;
+            }
+            input::before{
+                width: 28px;
+                height: 28px;
+            }
+            input{
+                margin-right: 16px;
+            }
+            .content-bg{
+                padding: 0 3vw 0 3vw;
+            }
+            .logo-img{
+                width: 90px;
+            }
+        }
+
+
+        /*适配ipadPro*/
+        @media all and (min-width:1024px){
+            .content-list{
+                margin: 178px 0 0px 175px;
+            }
+        }
+
+        button {
+            position: relative;
+            text-align: center;
+            width: 92%;
+            margin: 35px 0 0 4%;
+            background: #ff513a;
+            border-radius: 50px;
+        }
+
+        .dot1 {
+            position: absolute;
+            width: 8px;
+            padding-top: 4px;
+            right: 77px;
+            top: 4px;
+            border-radius: 50px;
+            background: #fff;
+        }
+
+        .dot2 {
+            position: absolute;
+            width: 35px;
+            padding-top: 4px;
+            right: 38px;
+            top: 4px;
+            border-radius: 50px;
+            background: #fff;
+        }
+
+        .button-font {
+            font-size: 26px;
+            font-family: FZCYJ;
+            line-height: 46px;
+            letter-spacing: 5px;
+            color: #fff;
+        }
+
+
+
+        .logo {
+            margin-top: 19px;
+
+            text-align: center;
+        }
+
+        .logo-img {
+            width: 83px;
+        }
+
+        input::-webkit-input-placeholder {
+            /* placeholder颜色  */
+            color: #cccccc;
+            /* placeholder字体大小  */
+            font-size: 12px;
+        }
+
+        .sweet-alert button{
+            background: #F08080 !important;
+        }
+
+        .title-text{
+            margin: 19px 0 30px 0;
+            text-align: center;
+            line-height: 43px;
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+
+
+
+
+    </style>
+
+
+
+
+</head>
+
+<body>
+
+<div>
+
+    <div class="title">
+        <img class="member-img" src="../../../static/home/imgs/1.png" alt="">
+
+        <div class="title-text">
+            <div class="text">测一测</div>
+            <div class="text">你是哪种学习类型</div>
+        </div>
+    </div>
+
+
+    <div class="content">
+        <img class="content-bg" src="../../../static/home/imgs/背景.png" alt="">
+        <div class="content-list">
+            <p class="name">
+                <span>称&nbsp;&nbsp;呼</span>
+                <input type="text" class="input-name" id="name01" placeholder="请输入姓名">
+                <!-- 获取输入的姓名 -->
+
+                <label>
+                    <input class="input-sex" checked="checked" type="radio" name="sex" value='1'>
+                    <span>先生</span>
+                </label>
+                <label>
+                    <input class="input-sex" type="radio" name="sex" value='2'>
+                    <span>女生</span>
+                </label>
+            </p>
+
+            <p class="tel">
+                <span>您的电话</span>
+                <input type="text" class="tel-input" id="name03" onkeyup="(this.v=function()
+                  {this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)"
+                       maxlength="11"
+                       placeholder="请输入正确的手机号">
+                <!-- 获取输入的手机号 -->
+            </p>
+
+            <p class="add">
+                <span>所在城市</span>
+                <input type="text" class="add-input" id="name04" placeholder="请输入城市名">
+                <!-- 获取输入的城市 -->
+            </p>
+            <p class="add" style="display: none;">
+                <span></span>
+                <input type="text" class="add-input" id="ids" value="{$ids}">
+            </p>
+        </div>
+    </div>
+
+
+    <footer>
+        <button id="my_ajax_test">
+            <span class="dot1"></span>
+            <span class="dot2"></span>
+            <span class="button-font">开始测试</span>
+
+        </button>
+        <div class="logo">
+            <img class="logo-img" src="../../../static/home/imgs/矢量智能对象.png" alt="">
+        </div>
+    </footer>
+
+    <span></span>
+
+</div>
+
+
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+    var input_name = document.getElementsByClassName("input-name")[0];
+    var tel_input = document.getElementsByClassName("tel-input")[0];
+    var add_input = document.getElementsByClassName("add-input")[0];
+
+    $('#my_ajax_test').click(function(){
+        console.log(tel_input)
+        if (input_name.value==null||input_name.value==""){
+            swal("请输入您的姓名")
+            return
+        }
+        if (tel_input.value.length<11||tel_input.value==null||tel_input.value==""){
+            swal("请输入11位的手机号")
+            return
+        }
+        if (add_input.value==null||add_input.value==""){
+            swal("请输入您所在的城市")
+            return
+        }
+
+
+        var realname=$('#name01').val();
+        var sex=$("input[name='sex']:checked").val();
+        var phone=$('#name03').val();
+        var address=$('#name04').val();
+        var ids = $('#ids').val();
+		
+		var url = "{:url('Index/subUserinfo')}";
+
+        $.post(url,{realname:realname,sex:sex,phone:phone,address:address,testpaper_id:ids},function(data){
+            if(data.code == 200){
+                window.location.href = "{:url('index/problemone')}?ids="+data.volume_id;
+            }else{
+				alert(data.msg);
+				return false;
+			}
+        },'json');
+	});
+	
+	wx.config({
+            appId: '{$share.appId}',
+			timestamp: '{$share.timestamp}',
+			nonceStr: '{$share.nonceStr}',
+			signature: '{$share.signature}',
+		   jsApiList: [
+				'checkJsApi',
+				'onMenuShareTimeline',
+				'onMenuShareAppMessage',
+				'onMenuShareQQ',
+				'onMenuShareWeibo'
+			  ]
+		  });             
+            wx.ready(function () {
+                  // 1 判断当前版本是否支持指定 JS 接口，支持批量判断
+                wx.checkJsApi({
+                  jsApiList: [
+                    'getNetworkType',
+                    'previewImage',
+                     'onMenuShareTimeline',
+                    'onMenuShareAppMessage',
+                    'onMenuShareQQ',
+                    'onMenuShareWeibo'
+                  ],            
+                });
+              var shareData = {
+                title: '招财卡会员测评',
+                desc: '有趣好玩又专业的财富测评尽在叶檀财经',
+                link: 'http://h5.yetancaijing.com/zhaocai/index',
+                imgUrl: 'http://h5.yetancaijing.com/static/home/imgs/logo.png',   
+              };
+              wx.onMenuShareAppMessage(shareData);
+              wx.onMenuShareTimeline(shareData);
+              wx.onMenuShareQQ(shareData);
+              wx.onMenuShareWeibo(shareData);
+            });
+</script>
+</body>
+</html>
