@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    
 
-<style>
 
-</style>
+    <style>
+
+    </style>
 </head>
 <style>
-#photo{
-    width: 100vw;
-}
-#qrcode{
-    width: 100vw;
-}
+    #photo {
+        width: 100vw;
+    }
+
+    #qrcode {
+        width: 100vw;
+    }
 </style>
 
 <body onresize="myFunction()">
@@ -29,11 +30,11 @@
         　　<p>募捐金额<span>45678</span>元</p>
         　　<p>荣誉等级<span>海绵宝宝</span></p>
         　　<div id="qrcode"></div>
-            　　
+        　　
     </section>
     <div id='photo'>
         　　<span>长按图片保存和分享</span>
-        
+
     </div>
 
 </body>
@@ -47,7 +48,7 @@
 <script src="./js/html2canvas.svg.min.js"></script>
 
 <script>
-     var w = window.outerWidth;
+    var w = window.outerWidth;
     var h = window.outerHeight;
 
 
@@ -59,39 +60,37 @@
 
 
         var shareContent = document.getElementById("section");
-        
+
         html2canvas(shareContent, {
             useCORS: true,
             scale: 2,
             width: w,
             height: h,
             onrendered: function (canvas) {
-                
                 var img = new Image();
                 img.src = canvas.toDataURL();
-             var newimg=document.getElementById("photo").appendChild(img);
-                console.log(w)
-                console.log(h)
-                newimg.style.width="100vw"
+                var newimg = document.getElementById("photo").appendChild(img);
+                console.log(w);
+                console.log(h);
+                newimg.style.width = "100vw";
             }
-        })    
+        })
     }
 
 
-// var img=document.getElementById("img")
+    // var img=document.getElementById("img")
 
-//     function saveImg(){
-//         var shareContent = document.getElementById("section");
-// 　　　　　　　　html2canvas( shareContent,{
-// 　　　　　　　　　　onrendered: function(canvas){
-// 　　　　　　　　　　this.url = canvas.toDataURL() ;　　　　　　　　
-// 　　　　　　　　}
-// 　　　　　　})
-// 　　　　}
-    
-
-setTimeout(function(){saveImg()},1000);
-   
+    //     function saveImg(){
+    //         var shareContent = document.getElementById("section");
+    // 　　　　　　　　html2canvas( shareContent,{
+    // 　　　　　　　　　　onrendered: function(canvas){
+    // 　　　　　　　　　　this.url = canvas.toDataURL() ;　　　　　　　　
+    // 　　　　　　　　}
+    // 　　　　　　})
+    // 　　　　}
 
 
+    setTimeout(function () {
+        saveImg()
+    }, 1000);
 </script>
