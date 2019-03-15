@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/html2canvas/0.4.1/html2canvas.js"></script>
+    <style>
+        header {
+            margin-top: 9px;
+            text-align: center;
+        }
+
+        .header-img {
+            width: 116px;
+        }
+
+
+        title {
+            display: block;
+        }
+
+        .total-container {
+            text-align: center;
+            margin-top: 16px;
+            line-height: 46px;
+        }
+
+        .total-text {
+            font-size: 30px;
+        }
+
+        .total {
+            font-size: 60px;
+            font-family: SYHT;
+            color: #ff513a;
+            text-shadow: #000 0px 0px 3px;
+        }
+
+        .content {
+            position: relative;
+        }
+
+        .content-bg {
+            margin-left: 5px;
+            width: 94%;
+        }
+
+        .content_container {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            top: 32px;
+            left: 24px;
+            width: 85.5%;
+        }
+
+        .content_title {
+            text-align: center;
+            font-size: 27px;
+            font-weight: 600;
+        }
+
+        .content_img {
+            margin: 9px 0 13px 0;
+            height: 40VW;
+        }
+
+        .row {
+            line-height: 24px;
+            font-size: 15px
+        }
+
+        .footer-nav {
+            margin: 20px 0 12px 0;
+            padding: 0 16px 0 14px;
+            line-height: 25px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            background: #ffcac4;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            height: 58px;
+            letter-spacing: 3px;
+            font-size: 9px;
+        }
+
+        .logo {
+            margin: 5px 0 2px 0;
+            width: 82px;
+        }
+
+        .around {
+            border-radius: 8px;
+            border: solid 1px #FF513A;
+        }
+
+        .code {
+            width: 50px;
+            margin: 3px;
+        }
+
+        @media all and (max-width:320px) {
+            .content_img {
+                width: 30W;
+            }
+
+            .footer-text {
+                display: inline-block;
+                margin-bottom: 6px;
+            }
+        }
+        @media all and (min-width:375px) {
+            .content_img {
+                height: 158px;
+            }
+
+            .footer-text {
+                display: inline-block;
+                margin-bottom: 6px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="section">
+
+        <header>
+            <img class="header-img" src="./imgs/成绩单.png" alt="">
+        </header>
+
+
+        <div class="total-container">
+            <span class="total">15</span>
+            <span class="total-text">分</span>
+        </div>
+
+
+
+        <div class="content">
+            <img class="content-bg" src="./imgs/背景1.png" alt="">
+
+            <div class="content_container">
+                <div class="content_title">
+                    <span>知识浅薄型</span>
+                </div>
+
+                <img class="content_img" src="./imgs/a (4).png" alt="">
+
+                <div class="row">
+                    <span>奋斗所到处，财富恰自来！
+                            </span>
+                </div>
+                <div class="row">
+                    <span>生命不止，学习不息！</span>
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+        <footer>
+            <div class="footer-nav">
+                <span>长按保存图片</span>
+            </div>
+
+            <div class="footer-content">
+                <div>
+                    <div class="around">
+                        <img class="code" src="./imgs/二维码.png" alt="">
+                    </div>
+                </div>
+                <img class="logo" src="./imgs/矢量智能对象.png" alt="">
+                <span class="footer-text">提升中产阶级理财决策效率</span>
+            </div>
+        </footer>
+
+
+        <div id="qrcode"></div>
+            　　
+        <div id='photo'></div>
+            　　
+       
+    </div>
+
+</body>
+
+</html>
+<script>
+//     function saveImg() {
+
+// setTimeout(function () {
+//         var shareContent = document.getElementById("section");
+//         html2canvas(shareContent, {
+//             onrendered: function (canvas) {
+//                 canvas.id = "mycanvas";
+//                 var img = new Image();
+//                 img.src = canvas.toDataURL();
+//                 document.getElementById("photo").appendChild(img);
+//             }
+//         })
+
+//     },2000)
+// }
+// saveImg()
+
+
+    // setTimeout(function () {
+    //     saveImg()
+    // }, 2000);
+</script>
