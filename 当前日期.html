@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    button{
+        width: 10px;
+        height: 10px;
+    }
+    </style>
+</head>
+<body>
+<button id="in" onclick=" aaa()">
+
+</button>
+    
+</body>
+
+</html>
+<script>
+// var myDate = new Date();
+// myDate.getYear(); 
+// console.log(myDate);
+
+
+function aaa(){
+    var cur=new Date()
+    var year=cur.getFullYear();
+    var month=cur.getMonth()+1;
+    var day=cur.getDate()
+    if(year>2019){
+        Disbale();
+    }else if (month>3){
+        Disbale();
+    }else if (month==3&&day>25){
+        Disbale();
+    }
+    }
+    
+    function Disbale(){
+        var inn = document.getElementById("in")
+        inn.disbale=true;
+        alert("no")
+        return false;
+    }
+
+
+
+</script>
