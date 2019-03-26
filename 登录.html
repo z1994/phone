@@ -2,70 +2,78 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta  charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- 视图窗口，移动端特属的标签。 -->
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
-    <!-- 是否启动webapp功能，会删除默认的苹果工具栏和菜单栏。 -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <!-- 这个主要是根据实际的页面设计的主体色为搭配来进行设置。 -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <!-- 忽略页面中的数字识别为电话号码,email识别 -->
-    <meta name="format-detection"content="telephone=no, email=no" />
-    <!-- 启用360浏览器的极速模式(webkit) -->
-    <meta name="renderer" content="webkit">
-    <!-- 避免IE使用兼容模式 -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
-    <meta name="HandheldFriendly" content="true">
-    <!-- 微软的老式浏览器 -->
-    <meta name="MobileOptimized" content="320">
-    <!-- uc强制竖屏 -->
-    <meta name="screen-orientation" content="portrait">
-    <!-- QQ强制竖屏 -->
-    <meta name="x5-orientation" content="portrait">
-    <!-- UC强制全屏 -->
-    <meta name="full-screen" content="yes">
-    <!-- QQ强制全屏 -->
-    <meta name="x5-fullscreen" content="true">
-    <!-- UC应用模式 -->
-    <meta name="browsermode" content="application">
-    <!-- QQ应用模式 -->
-    <meta name="x5-page-mode" content="app"> 
-    <!-- windows phone 点击无高光 -->
-    <meta name="msapplication-tap-highlight" content="no">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta charset="UTF-8">
+  <meta charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    name="viewport" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- 视图窗口，移动端特属的标签。 -->
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+  <!-- 是否启动webapp功能，会删除默认的苹果工具栏和菜单栏。 -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- 这个主要是根据实际的页面设计的主体色为搭配来进行设置。 -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <!-- 忽略页面中的数字识别为电话号码,email识别 -->
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <!-- 启用360浏览器的极速模式(webkit) -->
+  <meta name="renderer" content="webkit">
+  <!-- 避免IE使用兼容模式 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+  <meta name="HandheldFriendly" content="true">
+  <!-- 微软的老式浏览器 -->
+  <meta name="MobileOptimized" content="320">
+  <!-- uc强制竖屏 -->
+  <meta name="screen-orientation" content="portrait">
+  <!-- QQ强制竖屏 -->
+  <meta name="x5-orientation" content="portrait">
+  <!-- UC强制全屏 -->
+  <meta name="full-screen" content="yes">
+  <!-- QQ强制全屏 -->
+  <meta name="x5-fullscreen" content="true">
+  <!-- UC应用模式 -->
+  <meta name="browsermode" content="application">
+  <!-- QQ应用模式 -->
+  <meta name="x5-page-mode" content="app">
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <title>登录页</title>
   <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
   <style>
+    body {
+      margin: 0;
+    }
 
-    body{
-            margin: 0;
-        }
 
+    input {
+      outline: none;
+      border: solid #ffffff;
+    }
 
-        input {
-    outline: none;
-    border: solid #ffffff;
-        }
-        input::-webkit-input-placeholder{
-            color:#979797;
-        }
-        input::-moz-placeholder{   /* Mozilla Firefox 19+ */
-            color:#979797;
-        }
-        input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
-            color:#979797;
-        }
-        input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
-            color:#979797;
-        }
-          .sign-header {
-    position: relative;
-    display: flex;
-          }
+    input::-webkit-input-placeholder {
+      color: #979797;
+    }
+
+    input::-moz-placeholder {
+      /* Mozilla Firefox 19+ */
+      color: #979797;
+    }
+
+    input:-moz-placeholder {
+      /* Mozilla Firefox 4 to 18 */
+      color: #979797;
+    }
+
+    input:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: #979797;
+    }
+
+    .sign-header {
+      position: relative;
+      display: flex;
+    }
 
     .header-back {
       float: left;
@@ -80,49 +88,56 @@
       margin-top: -2.5px;
       font-size: 17px;
     }
-  
 
-.header{
-  position: relative;
-}
-  .header-bg {
-    /* position: relative;
+
+    .header {
+      position: relative;
+    }
+
+    .header-bg {
+      /* position: relative;
     width: 100vw;
     height: 201px;
     background: url(./imgs/bj.png) no-repeat;
     background-size: cover; */
-    /*background-attachment: fixed; */
-    position: absolute;
-    border-radius: 0 0 8px 8px;
-    width: 100vw;
-    height:201px;
+      /*background-attachment: fixed; */
+      /* position: absolute; */
+      border-radius: 0 0 8px 8px;
+      width: 100vw;
+      height: 201px;
 
-  }
-    .bg-text{
+    }
+
+    .bg-text {
       position: absolute;
       margin: 68px 0 0 30px;
       font-size: 22px;
       color: #fff;
+      top: 0;
     }
-      p{
-        margin-top: 5px;
-      }
 
-  .sign-module {
-    position: absolute;
-    /* display: flex;
+    p {
+      margin-top: 5px;
+    }
+    a{
+      text-decoration:none;
+    }
+
+    .sign-module {
+      position: absolute;
+      /* display: flex;
     justify-content: space-between; */
-    height: 156px;
-    width: 88vw;
-    border-radius: 10px;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 165px auto 0 auto;
-    border: solid 1px #ccc;
-    box-shadow: 2px 2px 2px #ccc;
-    background: #fff;
-  }
+      height: 156px;
+      width: 88vw;
+      border-radius: 10px;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: 165px auto 0 auto;
+      border: solid 1px #ccc;
+      box-shadow: 2px 2px 2px #ccc;
+      background: #fff;
+    }
 
     .sign-tel {
       display: flex;
@@ -132,23 +147,23 @@
       border-bottom: solid 1px #ccc;
     }
 
-      .iconfont {
-        display: inline-block;
-        margin-right: 4px;
-      }
+    .iconfont {
+      display: inline-block;
+      margin-right: 4px;
+    }
 
-      .sign-text {
-        margin-right: 16px;
-        padding-right: 10px;
-        border-right: 1px solid #ccc;
-        color: #979797;
-      }
+    .sign-text {
+      margin-right: 16px;
+      padding-right: 10px;
+      border-right: 1px solid #ccc;
+      color: #979797;
+    }
 
-      .sign-input {
-        width: 30vw;  
-        font-size: 15px;
-      }
-    
+    .sign-input {
+      width: 30vw;
+      font-size: 15px;
+    }
+
 
     .sign-pwd {
       margin: 0 15px;
@@ -156,27 +171,27 @@
       border-bottom: solid 1px #ccc;
     }
 
-      .sign-input {
-        font-size: 15px;
-      }
+    .sign-input {
+      font-size: 15px;
+    }
 
-      .send {
-        float: right;
-        margin-top: 5px;
-        width: 30vw;
-        line-height: 30px;
-        text-align: center;
-        background: #FF513A;
-        font-size: 13px;
-        border-radius: 8px;
-        color: #fff;
-      }
+    .send {
+      float: right;
+      margin-top: 5px;
+      width: 30vw;
+      line-height: 30px;
+      text-align: center;
+      background: #FF513A;
+      font-size: 13px;
+      border-radius: 8px;
+      color: #fff;
+    }
 
 
-  .member {
-    text-align: center;
-    margin-top: 90px;
-  }
+    .member {
+      text-align: center;
+      margin-top: 90px;
+    }
 
     .member-content {
       display: inline-block;
@@ -188,13 +203,14 @@
       color: #979797;
       background: #F7F7F7;
     }
-    .member-hint{
+
+    .member-hint {
       font-size: 15px;
       color: #FF513A;
     }
-  
 
-  /* .app{
+
+    /* .app{
     text-align: center;
   }
     .app-content{
@@ -209,57 +225,60 @@
     }
    */
 
-  footer{ 
-    margin-top: 150vw;
-    text-align: center;
-    font-size: 11px;
-  }
+    footer {
+      bottom: 30px;
+      left: 0;
+      right: 0;
+      margin-top: 95vw;
+      text-align: center;
+      font-size: 11px;
+    }
 
-    .footer-text{
+    .footer-text {
       color: #979797;
     }
-    .footer-protocol{
+
+    .footer-protocol {
       color: #FF513A;
     }
 
-    .confirm{
+    .confirm {
       background: #FF513A !important;
     }
-  
-    
-    </style>
+  </style>
 
-<link rel="stylesheet" type="text/css" href="https://www.huangwx.cn/css/sweetalert.css">
-<script type="text/javascript" src="https://www.huangwx.cn/js/sweetalert-dev.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://www.huangwx.cn/css/sweetalert.css">
+  <script type="text/javascript" src="https://www.huangwx.cn/js/sweetalert-dev.js"></script>
 
 
 </head>
 
 <body>
-  <!-- <div class="header">
+  <div class="header">
     <img class="header-bg" src="./imgs/bj.png" alt="">
     <div class="bg-text">
       <span>您好，</span>
       <p>欢迎来到叶檀财经</p>
     </div>
-  </div> -->
+  </div>
 
   <div class="sign-module">
     <div class="sign-tel">
       <!-- <div class="iconfont">&#xe608;</div> -->
       <img src="./imgs/手机.png" style="width:14px">
       <span class="sign-text">+86</span>
-      <input class="sign-input" type="text" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)" onblur="this.v();"
+      <input class="sign-input" type="text"
+        onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)" onblur="this.v();"
         maxlength="11" placeholder="请输入手机号" onfocus="this.placeholder=''">
-        
+
     </div>
 
     <div class="sign-pwd">
       <!-- <span class="iconfont">&#xe646;</span> -->
       <img src="./imgs/验证.png" style="width:14px">
       <input type="text" class="sign-input" onkeyup="(this.v=function()
-                  {this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)"
-        onblur="this.v();" maxlength="6" placeholder="请输入验证码" onfocus="this.placeholder=''">
+                  {this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)" onblur="this.v();" maxlength="6"
+        placeholder="请输入验证码" onfocus="this.placeholder=''">
 
       <input class="send" onclick="send()" type="button" value="获取验证码">
 
@@ -275,49 +294,56 @@
 
   </div>
   <footer>
-      <div class="footer-content">
-        <span class="footer-text">注册即代表同意</span>
-        <span class="footer-protocol">隐私政策/用户协议</span>
+    <div class="footer-content">
+      <span class="footer-text">注册即代表同意</span>
+      <a href="http://test.app.yetancaijing.com/app_basic/app/basic_info/policy?id=1"><span class="footer-protocol" >隐私政策/</span></a>
+      <a href="http://test.app.yetancaijing.com/app_basic/app/basic_info/policy?id=2"><span class="footer-protocol">用户协议</span></a>
+      
 
-      </div>
-    </footer>
+    </div>
+  </footer>
 
 
   <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
   <!-- IP地址 -->
   <script>
     var send_yzm = document.getElementsByClassName("send")[0]
-    var tel = document.getElementsByClassName("sign-input")[0];//手机号输入框
-    var yzm = document.getElementsByClassName("sign-input")[1];//验证码输入框
+    var tel = document.getElementsByClassName("sign-input")[0]; //手机号输入框
+    var yzm = document.getElementsByClassName("sign-input")[1]; //验证码输入框
     var res = true;
     //判断是否能获取验证码
 
     var mem = document.getElementsByClassName("member-content")[0];
 
+    var activity_id = "26"
+    var app_id = "sXEqqxLai9"; //app编号
+    var device_type = "1"; //设备类型
 
-    var app_id="sXEqqxLai9";	//app编号
-    var device_type="1";//设备类型
-    var type="1";//验证码类型
 
-    var ip=returnCitySN["cip"];//ip地址
+    var ip = returnCitySN["cip"]; //ip地址
+    // var ip="192.168.10.158";
     console.log(ip);
-    var method="Sms.sendSms";//表头
-    var nums="" ;//随机数
-    var timestamp;//时间戳
-    var type="0";//验证码类型
+    var method = "Sms.sendSms"; //表头
+    var methodlogin = "Login.InviteRegister"; //登录表头
+    var nums = ""; //随机数
+    var sms_type="0";
+    var timestamp; //时间戳
+    var type = "0"; //验证码类型
 
-		function getNum() {
-			var chars = ['0', '1', '2', 'xb3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
-				'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e',
-				'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
-			];
+    function getNum() {
+      var chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+        'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e',
+        'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+      ];
 
-			for (var i = 0; i < 32; i++) {
-				var id = parseInt(Math.random() * 61);
-				nums += chars[id];
-			}
-			return nums;
-		}//32位随机
+      for (var i = 0; i < 32; i++) {
+        var id = parseInt(Math.random() * 61);
+        nums += chars[id];
+      }
+      return nums;
+    } //32位随机
+
+    
 
     // getNum()
     // var hash = md5(this.nums);
@@ -336,42 +362,47 @@
         if (tel.value.length !== 11) {
           swal("请输入正确的手机号");
           return;
-        } else {
-          //手机号正常，可以进行一系列操作
+        } else { //手机号正常，可以进行一系列操作
+
           getNum()
           //运行32位随机字符串函数
           console.log(this.nums)
 
-          timestamp = Math.round(new Date().getTime() / 1000).toString();//时间戳
+          timestamp = Math.round(new Date().getTime() / 1000).toString(); //时间戳
           console.log(timestamp)
 
-          var aa="iJA4cPmHEkzszw4u"+"app_id"+app_id+"device_type"+device_type+"ip"+ip+"method"+method+"nonce"+this.nums+"phone"+tel.value+"timestamp"+timestamp+"type"+type+"iJA4cPmHEkzszw4u"
+          var aa = "iJA4cPmHEkzszw4u" + "app_id" + app_id + "device_type" + device_type + "ip" + ip + "method" +
+            method + "nonce" + this.nums + "phone" + tel.value + "timestamp" + timestamp + "type" + type +
+            "iJA4cPmHEkzszw4u"
           console.log(aa)
           //拼接签名
 
           var sign = md5(aa).toUpperCase();
           console.log(sign)
-          //加密签名
+          console.log(typeof sign)
+          //加密签名,转换大写
 
-          var xml=new XMLHttpRequest();
-          xml.onreadystatechange=function(){
-            if(xml.readyState==4&&xml.status==200){
+
+          var xml = new XMLHttpRequest();
+          xml.onreadystatechange = function () {
+            if (xml.readyState == 4 && xml.status == 200) {
               console.log("发送验证码成功")
-            }else{
-              console.log("发送验证码失败")
             }
           }
-          
 
 
-      xml.open("POST","http://test.api.yetancaijing.com/api/router?method=Sms.sendSms"+"&app_id=" + app_id + "&device_type=" + device_type + "&nonce=" + this.nums +"&phone="+tel.value+
-           "&timestamp=" + this.timestamp +"&sign=" + sign,true);
-      xml.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      // xml.setRequestHeader("method=Sms.sendSms/",  "&app_id=" + app_id + "&device_type=" + device_type + "&nonce=" + this.nums +"&phone="+tel.value+
-      //     "&timestamp=" + this.timestamp +"&sign=" + sign);
-      // xml.send(phone=tel.value,app_id=app_id,nonce=nonce,timestamp=timestamp,sign=sign,device_type=device_type,ip=ip,type=sms_type)
-      xml.send()
-   
+
+          xml.open("POST", "http://test.api.yetancaijing.com/api/router?method=Sms.sendSms" + "&app_id=" + app_id +
+            "&device_type=" + device_type + "&nonce=" + this.nums + "&phone=" + tel.value +
+            "&timestamp=" + this.timestamp + "&type=" + type + "&ip=" + ip + "&sign=" + sign, true);
+
+          // xml.open("POST","http://test.api.yetancaijing.com/api/router?method=Sms.sendSms",true);
+          xml.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+          // xml.setRequestHeader("method=Sms.sendSms/",  "&app_id=" + app_id + "&device_type=" + device_type + "&nonce=" + this.nums +"&phone="+tel.value+
+          //     "&timestamp=" + this.timestamp +"&sign=" + sign);
+          // xml.send(phone=tel.value,app_id=app_id,nonce=nonce,timestamp=timestamp,sign=sign,device_type=device_type,ip=ip,type=sms_type)
+          xml.send()
+
 
           console.log(tel.value)
           this.res = false;
@@ -388,31 +419,15 @@
             clearInterval(set);
             this.res = true;
           }, 60000);
-
-
-
         }
       }
-      
+
     }
 
     function isno() {
-      if (tel.value.length == 11 && yzm.value.length == 6) {
+      if (tel.value.length == 11 && yzm.value.length == 5) {
         mem.style.background = "#FF513A";
         mem.style.color = "#fff";
-        
-        //var xml=new XMLHttpRequest();
-        // xml.onreadystatechange=function(){
-        //   if(xml.readyState==4&&xml.status==200){
-        //     console.log("登录成功")
-        //   }else{
-        //     console.log("登录失败")
-        //   }
-        // }
-        
-        // xml.open("PSOT","xxx",true);
-        // xml.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        // xml.send(tel.value,yzm.value);
       } else {
         mem.style.background = "#F7F7F7";
         mem.style.color = "#979797";
@@ -424,17 +439,48 @@
       console.log(000)
     }, 500);
 
-    function sign(){
-      if (mem.style.background == "rgb(255, 81, 58)"){
+    function sign() {//登录事件
+      if (mem.style.background == "rgb(255, 81, 58)") {
         console.log("可以登录")
         console.log(tel.value)
         console.log(yzm.value)
-      }else{
+
+        nums="";
+        getNum()
+        //运行32位随机字符串函数
+        console.log(this.nums)
+
+        timestamp = Math.round(new Date().getTime() / 1000).toString(); //时间戳
+        console.log(timestamp)
+
+        var aa = "iJA4cPmHEkzszw4u" + "app_id" + app_id + "device_type" + device_type + "ip" + ip + "methodlogin" + methodlogin +
+          "nonce" + this.nums + "phone" + tel.value +"sms_code"+yzm.value+ "timestamp" + timestamp +  "iJA4cPmHEkzszw4u"
+        console.log(aa)
+        //拼接签名
+
+        var sign = md5(aa).toUpperCase();
+        console.log(sign)
+        //加密签名,转换大写
+
+        var xml = new XMLHttpRequest();
+        xml.onreadystatechange = function () {
+          if (xml.readyState == 4 && xml.status == 200) {
+            console.log("登陆成功")
+          }
+        }
+
+        xml.open("POST", "http://test.api.yetancaijing.com/api/router?method=Login.InviteRegister" + "&app_id=" + app_id +
+          "&device_type=" + device_type + "&nonce=" + this.nums + "&phone=" + tel.value + "&sms_code="+yzm.value+
+          "&timestamp=" + this.timestamp + "&ip=" + ip + "&sign=" + sign, true);
+
+        xml.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        xml.send()
+      } else {
         console.log("不能登录")
+        return
       }
     }
-
-    
   </script>
 
 </body>
