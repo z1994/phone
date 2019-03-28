@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-bind:class="classObject"></div>
+    </div>
+    
+
+    <script>
+    var app=new Vue({
+        el:"#app",
+        data:{
+            classObject:{
+            isActive:true,
+            error:null
+            }
+        },
+        computed:{
+            classObject:function(){
+                return{
+                    active:this.isActive&&this.error,
+                    'text-danger':this.error&&this.error.type==='fatal'
+                }
+            }
+        }
+    })
+    </script>
+</body>
+</html>
