@@ -324,7 +324,7 @@
     // var ip="192.168.10.158";
     console.log(ip);
     var method = "Sms.sendSms"; //表头
-    var methodlogin = "Login.InviteRegister"; //登录表头
+    var methodlogin = "Login.loginAction"; //登录表头
     var nums = ""; //随机数
     var sms_type="0";
     var timestamp; //时间戳
@@ -453,7 +453,7 @@
         timestamp = Math.round(new Date().getTime() / 1000).toString(); //时间戳
         console.log(timestamp)
 
-        var aa = "iJA4cPmHEkzszw4u" + "app_id" + app_id + "device_type" + device_type + "ip" + ip + "methodlogin" + methodlogin +
+        var aa = "iJA4cPmHEkzszw4u" + "app_id" + app_id + "device_type" + device_type + "ip" + ip + "method" + methodlogin +
           "nonce" + this.nums + "phone" + tel.value +"sms_code"+yzm.value+ "timestamp" + timestamp +  "iJA4cPmHEkzszw4u"
         console.log(aa)
         //拼接签名
@@ -465,11 +465,19 @@
         var xml = new XMLHttpRequest();
         xml.onreadystatechange = function () {
           if (xml.readyState == 4 && xml.status == 200) {
-            console.log("登陆成功")
+            console.log("接口已连接")
+            console.log(xml.responseText)//后端返回的json字符串
+            res=JSON.parse(xml.responseText)//转换json字符串
+            console.log(res)
+            if(res.msg=="登陆成功"){
+              console.log(res.msg)
+            }else{
+              return
+            }
           }
         }
 
-        xml.open("POST", "http://test.api.yetancaijing.com/api/router?method=Login.InviteRegister" + "&app_id=" + app_id +
+        xml.open("POST", "http://test.api.yetancaijing.com/api/router?method=Login.loginAction" + "&app_id=" + app_id +
           "&device_type=" + device_type + "&nonce=" + this.nums + "&phone=" + tel.value + "&sms_code="+yzm.value+
           "&timestamp=" + this.timestamp + "&ip=" + ip + "&sign=" + sign, true);
 
