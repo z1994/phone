@@ -9,17 +9,21 @@
 </head>
 
 <body>
-    <form  id="signForm" action="doSignIn">
+    <form  id="signForm" action="截屏.html">
+        <div>邮箱
+            <input type="email" id="email"  placeholder="Email address" name="email" value="" required autofocus>
+        </div>
 
-       <input type="email" id="email"  placeholder="Email address" name="email" value="" required autofocus>
+        <div>密码
+            <input type="password" id="password1" placeholder="Your Password" name="password1" value="" required>
+        </div>
 
-       <input type="password" id="password1" placeholder="Your Password" name="password1" value="" required>
+        <div>确认密码
+            <input type="password" id="password2"  placeholder="Sure Password" name="password2" value="" required>
+        </div>
 
-       <input type="password" id="password2"  placeholder="Sure Password" name="password2" value="" required>
-
-       <div id="errorMessage"></div>
-
-       <button  type="button" onclick="checkPassword()">注  册</button>
+          <div id="errorMessage"></div>
+          <button  type="button" onclick="checkPassword()">注  册</button>
 
     </form>
 </body>
@@ -50,11 +54,12 @@
 
             errorMessage.innerHTML = "请输入密码!";
 
-        } else if (password1 != password2) {
+        } else if (password1 !== password2) {
 
             errorMessage = document.getElementById("errorMessage");
 
             errorMessage.innerHTML = "密码不一致!";
+            return
 
         } else {
 
