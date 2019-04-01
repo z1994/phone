@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 </head>
 
 <body>
@@ -23,14 +23,14 @@
 
 
 <script language="javascript">
-    $(document).ready(function () {
-        video.play();
-    });
+    // $(document).ready(function () {
+    //     video.play();
+    // });
 
     // var vList = ['video//01.mp4', 'video//1.mp4', 'video//02.mp4']; // 初始化播放列表  
     var vList = ['./imgs/1.mp4','./imgs/2.mp4']
     var vLen = vList.length;
-    var curr = 0;
+    var curr = 1;
     var video = document.getElementById("myvideo");
     video.addEventListener('ended', function () {
         play();

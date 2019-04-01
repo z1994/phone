@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <style>
+        .content {
+            position: relative;
+            width: 98vw;
+            height: 200px;
+            border-bottom: solid 1px #000;
+            border-left: solid 1px #000;
+        }
+
+        .row {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 10vw;
+            height: 1px;
+            transform:rotate(-17deg);
+            border: solid 1px red;
+        }
+
+        .card {
+            display: inline-block;
+            margin: 10px;
+            background: #fff;
+            padding: 15px;
+            min-width: 200px;
+            box-shadow: 0 3px 5px #ddd;
+            color: #555;
+        }
+
+        .card .box {
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            background: #ddd;
+            cursor: pointer;
+            box-shadow: 0 0 5px #ccc inset;
+        }
+
+        .card .box .fill {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            background: #03A9F4;
+            opacity: .5;
+            box-shadow: 0 0 5px #ccc;
+            -webkit-transition: 0.3s;
+            transition: 0.3s;
+        }
+
+        .card p {
+            margin: 25px 0 0;
+        }
+
+        /* .skew:hover .fill {
+            -webkit-transform: skew(45deg, 45deg);
+            transform: skew(45deg, 45deg);
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="box skew">
+            <div class="fill" onclick="aa()">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </div>
+        </div>
+        <p>skew(45deg, 45deg) </p>
+    </div>
+
+
+    <div class="content">
+        <div class="row">
+
+
+        </div>
+    </div>
+
+    <script>
+        var fill = document.getElementsByClassName("fill")[0];
+
+        function aa() {
+            fill.style.transform = "skew(45deg, 45deg)";
+            console.log('123')
+        }
+    </script>
+
+</body>
+
+</html>
