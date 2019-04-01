@@ -1,176 +1,150 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>庭审直播</title>
-    <link rel="stylesheet" href="css/base.css">
-    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    <script src="js/vue/dist/vue.js"></script>
-	<link rel="stylesheet" href="js/iview/dist/styles/iview.css">
-	<script src="js/iview/dist/iview.min.js"></script>
-    <!--引入播放器样式-->
-    <link href="js/videojs/css/video-js.min.css" rel="stylesheet">
-    <!--引入播放器js-->
-    <script src="js/videojs/js/video.min.js"></script>
-    <script src="js/videojs/js/videojs-flash.min.js"></script>
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <style type="text/css">
-    .video-js {
-   		/*  position: inherit !important; */
-    }
-    .video{
-    	width:50%;
-    	padding:0px !important;
-    	float:left;
-    }
-    .video-div{
-    	 float:left;
-   		 width:45%;
-   		 margin-left: 35px;
-   		 background:#3e3b3b00;
-    }
-    .dp-center{
-    	background: #403f3f;
-    }
-    .video-list{
-   	    margin: 5px 10px 10px 10px;
-	    padding: 5px 0px;
-	    max-height: 330px;
-	    list-style: none;
-	    -moz-border-radius: 5px;
-	    -webkit-border-radius: 5px;
-	    border-radius: 5px;
-    }
-    .video-list li {
-	    float: left;
-	    margin: 0;
-	    padding-left:15px;
-	    width: 175px;
-	    height: 140px;
-	}
-	.text_align_center{
-		text-align:center;
-		color:#fff;
-	}
-	a{
-	   text-decoration: none;
-	}
-    </style>
-  </head>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title></title>
+
+</head>
+
 <body>
-	<div id="app" class="dp-item dp-item-3">
-		<div class="dp-item_center">
- 			<div class="dp-tit">
-                <div class="dp-tit-btn btn6">
-                    庭审直播
-                </div>
-			</div>
-			<!-- 简介 -->
-			<div class="dp-center">
-                <div class="video">
-					<video id="my-player" class="video-js vjs-default-skin vjs-big-play-centered">
-    					<!-- <source src="rtmp://live.hkstv.hk.lxdns.com/live/hks" type="rtmp/flv">   -->
-					</video>
-                </div>
-                
-                <div class="video-div">
-					<ul class="video-list">
-						<li v-for="(item,index) in listItem">
-							<a id="video1" href="#" title="民间借贷纠纷">
-								<img v-bind:src="[item.image]" width="120px" height="80px" border="0">
-								<div class="video_list_explain text_align_center">{{item.title}}</div>
-								<div class="video_list_date text_align_center">{{item.dateTime}}</div>
-							</a>
-						</li>
-					</ul>
-					</div>
-			</div>
-		</div>
-	</div>
- 
-<script type="text/javascript">
-// 设置flash路径,用于在videojs发现浏览器不支持HTML5播放器的时候自动唤起flash播放器
-videojs.options.flash.swf = 'js/videojs/swf/video-js.swf';
- 
-var vm = new Vue({
-    el: '#app',
-    data: {
-        visible: false,
-        listItem:[
-            {title:"民间借贷纠纷1",isplay:false, type:"video/mp4", url: "http://www.w3school.com.cn/example/html5/mov_bbb.mp4", image:"http://vod.videoincloud.com/gz/20180911/4QW3Un/4QW3Un_m_1.jpg", dateTime:"2018-09-10 16:30"},
-            {title:"民间借贷纠纷2", isplay:false, type:"video/mp4", url: "video/video.mp4",image:"http://vod.videoincloud.com/gz/20180911/4QW3Un/4QW3Un_m_1.jpg", dateTime:"2018-09-10 16:30"},
-            {title:"民间借贷纠纷3", isplay:false, type:"video/mp4", url: "http://7xn4dt.com1.z0.glb.clouddn.com/migo_vedio_720.mp4", image:"http://vod.videoincloud.com/gz/20180911/4QW3Un/4QW3Un_m_1.jpg",dateTime:"2018-09-10 16:30"},
-            {title:"民间借贷纠纷4", isplay:false, type:"video/mp4", url: "video/video.mp4",image:"http://vod.videoincloud.com/jsxzxyfy/20180910/55pXgd/55pXgd_m_1.jpg", dateTime:"2018-09-10 16:30"},
-        ]
-    },
-    mounted:function(){
-    	this.show();
-    },
-    filters: {
-      formatDate: function (value) {
-        let date = new Date(value);
-        let y = date.getFullYear();
-        let MM = date.getMonth() + 1;
-        MM = MM < 10 ? ('0' + MM) : MM;
-        let d = date.getDate();
-        d = d < 10 ? ('0' + d) : d;
-        let h = date.getHours();
-        h = h < 10 ? ('0' + h) : h;
-        let m = date.getMinutes();
-        m = m < 10 ? ('0' + m) : m;
-        let s = date.getSeconds();
-        s = s < 10 ? ('0' + s) : s;
-        return y + '-' + MM + '-' + d + ' ' + h + ':' + m + ':' + s;
-      }
-    },
-    methods: {
-        show: function () {
-            this.visible = true;
-        }
-    }
-});
- 
- 
-var list = vm.listItem;
-var i = 0;
-$(function(){
-	var source = document.getElementById("video-source");
-	var player = videojs("my-player", {
-		"width":"450px",
-		"height":"282px",
-	    "poster":"http://vod.videoincloud.com/gz/20180911/4QW3Un/4QW3Un_m_1.jpg",
-	    "autoplay":true,
-	    "controls": true,
-		"sources": [{
-		      src: list[i].url,
-		      type: list[i].type
-		  }],
- 
-	}, function(){
-	    this.on('loadeddata',function(){
- 
-	    })
-	    this.on('ended',function(){
-	    	 i++;
-	         if(i >= list.length){
-	            i = 0;
-	          }
-	          var videoObj = list[i];
-	          this.src({type: videoObj.type, src: videoObj.url});
-	          this.play();
-	    })
- 
-	});
-});
- 
-</script>	
+
+ 
+
+<video id="example_video_1" class="video-js vjs-default-skin" autoplay="autoplay" controls preload="none" width="640" height="264" poster="http://video-js.zencoder.com/oceans-clip.png" data-setup="{}">
+
+<source src="http://video1.dgtle.com/lhUFSApOVHyIp5JGeFJfannIyaAJ" type='video/mp4' />
+
+<source src="http://video1.dgtle.com/lhUFSApOVHyIp5JGeFJfannIyaAJ" type='video/webm' />
+
+<source src="http://video1.dgtle.com/lhUFSApOVHyIp5JGeFJfannIyaAJ" type='video/ogg' />
+
+</video>
+
+ 
+
+<div class="swiper-container">
+
+<div class="swiper-wrapper">
+
+<div class="swiper-slide slide-video" style="background: red;" data-video='http://video1.dgtle.com/lhUFSApOVHyIp5JGeFJfannIyaAJ'>slider1</div>
+
+<div class="swiper-slide slide-video" style="background: #555555;" data-video='http://video1.dgtle.com/lt3XGUX9dYl3ekqqNvnDwueCglRk'>slider2</div>
+
+<div class="swiper-slide slide-video" style="background: #007AFF;" data-video='http://video1.dgtle.com/lh78cAaCbSjiIDF_I1dm2fiGRJFu'>slider3</div>
+
+<div class="swiper-slide slide-video" style="background: red;" data-video='http://video1.dgtle.com/lt3XGUX9dYl3ekqqNvnDwueCglRk'>slider4</div>
+
+<div class="swiper-slide slide-video" style="background: #555555;" data-video='http://video1.dgtle.com/lhUFSApOVHyIp5JGeFJfannIyaAJ'>slider5</div>
+
+<div class="swiper-slide slide-video" style="background: #007AFF;" data-video='http://video1.dgtle.com/lt3XGUX9dYl3ekqqNvnDwueCglRk'>slider6</div>
+
+ 
+
+</div>
+
+<div class="swiper-button-prev"></div>
+
+<!--左箭头-->
+
+<div class="swiper-button-next"></div>
+
+<!--右箭头-->
+
+</div>
+
+ 
+
 </body>
+
+ 
+
 </html>
+
+ 
+
+<script>
+
+var myPlayer = videojs('example_video_1');
+
+videojs("example_video_1").ready(function() {
+
+var myPlayer = this;
+
+myPlayer.play();
+
+});
+
+ 
+
+var mySwiper = new Swiper('.swiper-container', {
+
+autoplay: false, //可选选项，自动滑动
+
+direction: 'vertical',
+
+// loop: true,
+
+slideToClickedSlide: true,
+
+slidesPerView: 3,
+
+centeredSlides: true,
+
+initialSlide: 1,
+
+// loopedSlides : 6,
+
+navigation: {
+
+nextEl: '.swiper-button-next',
+
+prevEl: '.swiper-button-prev',
+
+},
+
+on: {
+
+click: function() {
+
+//    var that=this.clickedIndex+1
+
+$('video').attr('src', $('.swiper-wrapper .swiper-slide-active').attr('data-video'))
+
+ 
+
+}
+
+}
+
+})
+
+$('video').attr('src', $('.swiper-wrapper .swiper-slide-active').attr('data-video'))
+
+$('video')[0].onended = function() {
+
+console.log('视频播放结束');
+
+setTimeout(function() {
+
+mySwiper.slideNext();
+
+$('video').attr('src', $('.swiper-wrapper .swiper-slide-active').attr('data-video'))
+
+console.log($('.swiper-wrapper .swiper-slide-active').attr('data-video'))
+
+ 
+
+}, 3000)
+
+}
+
+</script>
+--------------------- 
+作者：timebeign 
+来源：CSDN 
+原文：https://blog.csdn.net/timebeign/article/details/83054729 
+版权声明：本文为博主原创文章，转载请附上博文链接！
