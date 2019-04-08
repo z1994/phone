@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <select v-model="aa">
+            <!-- <option disabled value="">请选择</option> -->
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+        <span>Selected: {{ aa }}</span>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                aa: ''
+            }
+        })
+    </script>
+</body>
+
+</html>

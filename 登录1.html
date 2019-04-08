@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+
+    <!--
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+    -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+    <title>邀请注册</title>
+    <link href="https://res.wx.qq.com/open/libs/weui/1.1.3/weui.min.css" rel="stylesheet" type="text/css">
+</head>
+<style>
+    html {
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+        line-height: 1.6;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+
+    body {
+
+        -webkit-touch-callout: none;
+        font-family: -apple-system-font,BlinkMacSystemFont,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei UI","Microsoft YaHei",Arial,sans-serif;
+        color: #333;
+        background-color: #fff;
+        letter-spacing: .034em;
+    }
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    .top{
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 100%;
+        background-image: url("http://static.app.yetancaijing.com/page_config/index/154857285695.png");
+        height:204px;
+        border-radius:0px 0px 5px 5px;
+        color:white;
+        position: relative;
+    }
+
+    .top p{
+        height:60px;
+        font-size:22px;
+        font-family:PingFangSC-Medium;
+        font-weight:500;
+        color:rgba(255,255,255,1);
+        line-height:30px;
+        position: absolute;
+        top:68px;
+        left:30px;
+    }
+
+
+    .login{
+        width:90%;
+        height:40px;
+        background:rgba(247,247,247,1);
+        border-radius:4px;
+        font-size:17px;
+        font-family:PingFangSC-Medium;
+        font-weight:500;
+        color:rgba(151,151,151,1);
+        text-align: center;
+        line-height: 40px;
+        margin-top: 48vw;
+        margin-left: 5vw;
+    }
+    .tips{
+        width: 100%;
+        text-align: center;
+        height:16px;
+        font-size:11px;
+        font-family:PingFangSC-Regular;
+        font-weight:400;
+        color:rgba(151,151,151,1);
+        line-height:16px;
+        margin-top: 6rem;
+      
+    }
+    .tips a{
+        text-decoration: unset;
+        color:red;
+    }
+
+    .input-area{
+        height:156px;
+        background:rgba(255,255,255,1);
+        box-shadow:0px 1px 3px 0px rgba(220,220,220,1);
+        border-radius:5px;
+        left: 15px;
+        right: 15px;
+        position: absolute;
+        top:162px;
+    }
+    .input-line{
+        position: absolute;
+        left:15px;
+        right:15px;
+        height:45px;
+        border-bottom: 1px solid rgba(216,216,216,1);
+    }
+
+    .input-line1{
+        top:25px;
+    }
+    .input-line2{
+        bottom:38px;
+    }
+    .input-line img{
+        width: 15px;
+        position: absolute;
+        bottom: 13px;
+        left:2px;
+    }
+    .input-line p{
+        position: absolute;
+        left:28px;
+        bottom:11px;
+        height:21px;
+        font-size:15px;
+        font-family:PingFangSC-Regular;
+        font-weight:400;
+        color:rgba(151,151,151,1);
+        line-height:21px;
+    }
+    .input-line input{
+        left:82px;
+        bottom: 11px;
+        position: absolute;
+        border: none;
+        height:21px;
+        font-size:15px;
+        font-family:PingFangSC-Regular;
+        font-weight:400;
+        line-height:21px;
+
+    }
+    .input-line2 input{
+        left:28px;
+    }
+    .send-code{
+        width:80px;
+        height:30px;
+        background:rgba(255,81,58,1);
+        border-radius:4px;
+        text-align: center;
+        font-size:13px;
+        font-family:PingFangSC-Regular;
+        font-weight:400;
+        color:rgba(255,255,255,1);
+        line-height:30px;
+        position: absolute;
+        bottom: 6px;
+        right: 15px;
+    }
+    .login-active{
+        background:linear-gradient(324deg,rgba(252,101,69,1) 0%,rgba(255,81,58,1) 100%);
+        color:white;
+    }
+    .code-inactive{
+        background:rgba(247,247,247,1);
+        color:rgba(151,151,151,1);
+    }
+</style>
+<body>
+    <div id="loadingToast" style=" display: none;">
+        <div class="weui-mask_transparent"></div>
+        <div class="weui-toast">
+            <i class="weui-loading weui-icon_toast"></i>
+            <p class="weui-toast__content">注册中</p>
+        </div>
+    </div>
+    <div class="top">
+        <p>您好， <br/>欢迎来到叶檀财经</p>
+    </div>
+    <div class="input-area">
+        <div class="input-line input-line1">
+            <img src="http://static.app.yetancaijing.com/page_config/index/154857527343.png"/>
+            <p>+86 </p>
+            <div style="height: 16px;width: 1px;background-color: rgba(220,220,220,1);position: absolute;left:64px;bottom:13px;"></div>
+            <input id="phone" type="number" placeholder="请输入手机号">
+        </div>
+        <div class="input-line input-line2">
+            <img src="http://static.app.yetancaijing.com/page_config/index/154857530572.png"/>
+            <input  id="code" type="number" placeholder="请输入验证码">
+            <div id="sendCode" class="send-code" >发送验证码</div>
+        </div>
+    </div>
+
+    <div class="login" >开始7天免费会员</div>
+
+    <div class="tips">注册即代表同意<a href="{{route('app_basic.app.basic_info.policy',array('id'=>1))}}">隐私政策</a>/<a href="{{route('app_basic.app.basic_info.policy',array('id'=>2))}}">服务协议</a></div>
+<script src="http://static.app.yetancaijing.com/js/jquery-3.3.1.min.js"></script>
+<script>
+    var downloadUrl='{{$downloadUrl}}';
+</script>
+<script src="http://static.app.yetancaijing.com/js/share_login.min.js"></script>
+</body>
+
+</html>

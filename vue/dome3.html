@@ -5,73 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
+
 <body>
-        <div id="todo-list-example">
-                <form v-on:submit.prevent="addNewTodo">
-                  <label for="new-todo">Add a todo</label>
-                  <input
-                    v-model="newTodoText"
-                    id="new-todo"
-                    placeholder="E.g. Feed the cat"
-                  >
-                  <button>Add</button>
-                </form>
-                <ul>
-                  <li
-                    is="todo-item"
-                    v-for="(todo, index) in todos"
-                    v-bind:key="todo.id"
-                    v-bind:title="todo.title"
-                    v-on:remove="todos.splice(index, 1)"
-                  ></li>
-                </ul>
-              </div>
-    
+    <div id="app">
+        <table>
+            <tr>
+                <th>序号</th>
+                <th>商品名称</th>
+                <th>商品价格</th>
+                <th>购买数量</th>
+                <th>操作</th>
+            </tr>
+
+            <tr v-for="list in Ip_Json">
+                <td>{{list.id}}</td>
+                <td>{{list.name}}</td>
+                <td>{{list.price}}</td>
+                <td>
+                    <button v-bind:disabled="list.count == 0"  v-on:click="list.count-=1">-</button>
+                    <span>{{list.count}}</span>
+                    <button v-on:click="list.count+=1">+</button>
+                </td>
+                <td>
+                    <button @click="list.count=0">移除</button>
+                </td>
+            </tr>
+
+        </table>
+
+        <p>总价：{{total()}}元</p>
+
+    </div>
+
+
 </body>
-
 <script>
-Vue.component('todo-item', {
-  template: '\
-    <li>\
-      {{ title }}\
-      <button v-on:click="$emit(\'remove\')">Remove</button>\
-    </li>\
-  ',
-  props: ['title']
-})
+    var app = new Vue({
+        el: '#app',
+        data: {
+            Ip_Json: [{
+                    id: 1,
+                    name: 'iphone 8',
+                    price: 5099,
+                    count: 1
+                },
+                {
+                    id: 2,
+                    name: 'iphone xs',
+                    price: 8699,
+                    count: 1
+                },
+                {
+                    id: 3,
+                    name: 'iphone xr',
+                    price: 6499,
+                    count: 1
+                }
+            ]
 
-new Vue({
-  el: '#todo-list-example',
-  data: {
-    newTodoText: '',
-    todos: [
-      {
-        id: 1,
-        title: 'Do the dishes',
-      },
-      {
-        id: 2,
-        title: 'Take out the trash',
-      },
-      {
-        id: 3,
-        title: 'Mow the lawn'
-      }
-    ],
-    nextTodoId: 4
-  },
-  methods: {
-    addNewTodo: function () {
-      this.todos.push({
-        id: this.nextTodoId++,
-        title: this.newTodoText
-      })
-      this.newTodoText = ''
-    }
-  }
-})
- </script>
+        },
+        methods:{
+            total(){
+                var Total=0
+                for(var i=0,len=this.Ip_Json.length;i<len;i++){
+                    Total+=this.Ip_Json[i].price*this.Ip_Json[i].count;
+                }
+                return Total
+            }
+        }
+        
+    })
+</script>
 
 </html>
