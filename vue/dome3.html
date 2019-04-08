@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <table>
+            <tr>
+                <th>序号</th>
+                <th>商品名称</th>
+                <th>商品价格</th>
+                <th>购买数量</th>
+                <th>操作</th>
+            </tr>
+
+            <tr v-for="list in Ip_Json">
+                <td>{{list.id}}</td>
+                <td>{{list.name}}</td>
+                <td>{{list.price}}</td>
+                <td>
+                    <button v-bind:disabled="list.count == 0"  v-on:click="list.count-=1">-</button>
+                    <span>{{list.count}}</span>
+                    <button v-on:click="list.count+=1">+</button>
+                </td>
+                <td>
+                    <button @click="list.count=0">移除</button>
+                </td>
+            </tr>
+
+        </table>
+
+        <p>总价：{{total()}}元</p>
+
+    </div>
+
+
+</body>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            Ip_Json: [{
+                    id: 1,
+                    name: 'iphone 8',
+                    price: 5099,
+                    count: 1
+                },
+                {
+                    id: 2,
+                    name: 'iphone xs',
+                    price: 8699,
+                    count: 1
+                },
+                {
+                    id: 3,
+                    name: 'iphone xr',
+                    price: 6499,
+                    count: 1
+                }
+            ]
+
+        },
+        methods:{
+            total(){
+                var Total=0
+                for(var i=0,len=this.Ip_Json.length;i<len;i++){
+                    Total+=this.Ip_Json[i].price*this.Ip_Json[i].count;
+                }
+                return Total
+            }
+        }
+        
+    })
+</script>
+
+</html>

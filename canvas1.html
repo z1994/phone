@@ -7,7 +7,7 @@
         }
     </style>
 </head>
-<canvas id="tutorial" width="900" height="300"></canvas>
+<canvas id="solar" width="900" height="300"></canvas>
 </body>
 <script type="text/javascript">
     // function draw(){
@@ -32,12 +32,11 @@ function init(){
     sun = new Image();
     earth = new Image();
     moon = new Image();
-    sun.src = "sun.png";
-    earth.src = "earth.png";
-    moon.src = "moon.png";
+    sun.src = "./imgs/对号.png";
+    earth.src = "./imgs/对号.png";
+    moon.src = "./imgs/对号.png";
 
     let canvas = document.querySelector("#solar");
-    if(!canvas.getContext) return;
     ctx = canvas.getContext("2d");
 
     sun.onload = function (){
@@ -47,12 +46,6 @@ function init(){
 }
 init();
 function draw(){
-    let canvas = document.querySelector("#solar");
-    if(!canvas.getContext) return;
-    ctx = canvas.getContext("2d");
-
-
-
     ctx.clearRect(0, 0, 300, 300); //清空所有的内容
     /*绘制 太阳*/
     ctx.drawImage(sun, 0, 0, 300, 300);
