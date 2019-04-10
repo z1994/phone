@@ -34,6 +34,11 @@
         background: #fff;
         z-index: 99;
     }
+    .aa{
+        position: absolute;
+        top: 0;
+        z-index: 99;
+    }
 </style>
 
 <body onresize="myFunction()">
@@ -55,7 +60,7 @@
 
     </div>
 
-    <div>
+    <div class="aa">
         <a href="http://www.baidu.com/">超链接xxxxxxxx</a>
     </div>
 
@@ -86,7 +91,7 @@
 
         html2canvas(shareContent, {
             useCORS: true,
-            scale: 1,
+            scale: 2,
             width: w,
             height: h,
             onrendered: function (canvas) {
