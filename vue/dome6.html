@@ -1,0 +1,135 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+      
+        <input type="text" id="add" v-model="newTodoText">
+        <label for="add" v-on:click="add">add</label>
+
+
+        <ul>
+            <li v-for='(item,index) of todos' :key='item.id' :title='item.title'>
+               {{item.title}}
+                <button v-on:click="todos.splice(index, 1)">移除</button>
+            </li>
+        </ul>
+    </div>
+
+</body>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            newTodoText: '',
+            todos: [{
+                    id: 1,
+                    title: 'Do the dishes',
+                },
+                {
+                    id: 2,
+                    title: 'Take out the trash',
+                },
+                {
+                    id: 3,
+                    title: 'Mow the lawn'
+                }
+            ],
+            nextTodoId: 4
+        },
+        methods:{
+            add(){
+                this.todos.push({
+                    id:this.nextTodoId++,
+                    title:this.newTodoText
+                })
+                this.newTodoText=''
+            }
+        }
+    })
+</script>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/mint-ui@1/lib/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <mt-button @click.native="handleClick">按钮</mt-button>
+
+        <label for="input">
+            <input type="text" id="input" v-model="newTodoText">
+            <span @click="add">add</span>
+
+        </label>
+
+        <ul>
+            <li v-for='(item,index) of todos' :key="item.id">
+                {{item.title}}
+                <button @click="todos.splice(index,1)">rem</button>
+            </li>
+        </ul>
+    </div>
+</body>
+  <!-- 先引入 Vue -->
+  
+  <script src="https://unpkg.com/vue@1/dist/vue.js"></script>
+  <!-- 引入组件库 -->
+  <script src="https://unpkg.com/mint-ui@1/lib/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            newTodoText: '',
+            todos: [{
+                    id: 1,
+                    title: 'Do the dishes',
+                },
+                {
+                    id: 2,
+                    title: 'Take out the trash',
+                },
+                {
+                    id: 3,
+                    title: 'Mow the lawn'
+                }
+            ],
+        },
+        methods: {
+            add() {
+                this.todos.push({
+                    title: this.newTodoText
+                })
+                this.newTodoText = ''
+            },
+            handleClick: function () {
+                this.$toast('Hello world!')
+            },
+            rem() {
+                this.todos.splice(this.todos.index, 1)
+            }
+        }
+    })
+</script>
+
+</html>
