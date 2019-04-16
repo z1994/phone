@@ -74,6 +74,7 @@
     </style>
 </head>
 <body>
+    <div id="app">
         <div class="image-view">
                 <div class="addbox">
                     <input type="file" @change="getImgBase()">
@@ -86,12 +87,15 @@
                     </div>
                 </div>
             </div>
-
+</div>
     
 </body>
 
 <script>
- export default {
+    var app=new Vue({
+        el:'#app',
+    
+
         name: 'imageView',
         data (){
             return {
@@ -116,8 +120,8 @@
                 this.imgBase64.splice(index,1);
             }
         }
-    }
-
+    
+})
 </script>
 
 </html>
