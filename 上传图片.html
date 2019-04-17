@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-    #output{
-        width: 100px;
-    }
+        #output {
+            width: 100px;
+        }
     </style>
 </head>
+
 <body>
     <input type="file" accept="image/*" onchange="openFile(event)"><br>
     <img id="output">
 
     <script>
-    var openFile=function(event){
-        var input=event.target;
-        var reader=new FileReader();
-        reader.onload=function(){
-            var dataURL=reader.result;
-            var output=document.getElementById('output')
-            output.src=dataURL
+        var openFile = function (event) {
+            console.log(event.target.nodeName)
+            var input = event.target;
+            var reader = new FileReader()
+            reader.onload = function () {
+                var dataURL = reader.result;
+                console.log(reader)
+                var output = document.getElementById('output');
+                output.src = dataURL;
+                console.log(dataURL)
+            }
+
+            reader.readAsDataURL(input.files[0])
         }
-        reader.readAsDataURL(input.files[0])
-    }
-    
     </script>
-    
+
 </body>
+
 </html>
