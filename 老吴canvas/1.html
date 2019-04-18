@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        .aa{
-            position: absolute;
+        body{
+            margin: 0;
         }
 
         .img1 {
@@ -42,13 +42,22 @@
     function outJt() {
         //event.preventDefault();
         html2canvas(document.body, {
+            scale: 2,
             allowTaint: true,
             taintTest: false,
             onrendered: function (canvas) {
-                canvas.id = "mycanvas";
+                // canvas.id = "mycanvas";
+                
                 var dataUrl = canvas.toDataURL();
+                console.log(dataUrl)
+                // 截图为base64
+
                 var newImg = document.createElement("img");
+                // 创建一个img标签
+
                 newImg.src = dataUrl;
+                // 让新创建的img标签的src为dataUrl
+
                 $(".aa").attr("style", "display:none;");
                 // 让.aa的dom隐藏
                 console.log(newImg)

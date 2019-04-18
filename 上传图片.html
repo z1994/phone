@@ -22,6 +22,7 @@
             console.log(event.target.nodeName)
             var input = event.target;
             var reader = new FileReader()
+            
             reader.onload = function () {
                 var dataURL = reader.result;
                 console.log(reader)
