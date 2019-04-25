@@ -88,10 +88,19 @@
     <title>测试页面</title>
 
     <script>
-        function test(){
-          console.log("************test**************");
-          alert("用户名")
-        } 
+      function isAndroid_ios() {
+     
+     var u = navigator.userAgent,
+       app = navigator.appVersion;
+     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+     var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+     if (isAndroid == true) {
+
+       
+
+
+
+    
 
 
         
@@ -117,14 +126,13 @@
 
 
       }
-
+}
 
     </script>
 
 </head>
 <body style="background-color: #ffffaa;">
-<!-- <h1><a href="javascript:test();">错误提示</a></h1>
-<h1><a href="javascript:getToken();">获取Token</a></h1>
-  -->
+
+  
 </body>
 </html>
