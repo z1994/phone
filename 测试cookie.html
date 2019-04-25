@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -82,4 +82,45 @@
 
 </body>
 
+</html> -->
+<html>
+<head>
+    <title>测试页面</title>
+
+    <script>
+        function test(){
+          console.log("************test**************");
+          alert("用户名")
+        } 
+
+
+        
+       function getToken(){
+          var data = {"nativeName":"common.app.token.get","parameter":{},"callbackName":"common.app.token.get.resp"};
+          jsCallNative(data);
+        }
+      //js调用app方法
+      function jsCallNative(jsontext){
+        var webjson =  JSON.stringify(jsontext);
+	    Android.functionjsCallNative(webjson);
+      }
+
+
+      //app调用js方法
+      function nativeCallJS(jsontext){
+          console.log("nativeCallJS="+JSON.stringify(jsontext));
+          alert("nativeCallJS="+JSON.stringify(jsontext));
+
+
+      }
+
+
+    </script>
+
+</head>
+<body style="background-color: #ffffaa;">
+<h1><a href="javascript:test();">错误提示</a></h1>
+<h1><a href="javascript:getToken();">获取Token</a></h1>
+ 
+</body>
 </html>
