@@ -22,27 +22,29 @@
     var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
     if (isAndroid == true) {
       alert("an")
-      function getToken() {
-        var data = {
-          "nativeName": "common.app.token.get",
-          "parameter": {},
-          "callbackName": "common.app.token.get.resp"
-        };
-        jsCallNative(data);
-      }
-      getToken()
 
-      function jsCallNative() {
-        var webjson = JSON.stringify(jsontext);
-        Android.functionjsCallNative(webjson);
+      function getToken(){
+          var data = {"nativeName":"common.app.token.get","parameter":{},"callbackName":"common.app.token.get.resp"};
+          jsCallNative(data);
+        }
+
+        getToken()
+
+
+      //js调用app方法
+      function jsCallNative(jsontext){
+        var webjson =  JSON.stringify(jsontext);
+	    Android.functionjsCallNative(webjson);
       }
+
 
       //app调用js方法
-      function nativeCallJS(jsontext) {
-        // console.log("nativeCallJS="+JSON.stringify(jsontext));
-        alert("nativeCallJS=" + JSON.stringify(jsontext));
-      }
+      function nativeCallJS(jsontext){
+          console.log("nativeCallJS="+JSON.stringify(jsontext));
+          alert("nativeCallJS="+JSON.stringify(jsontext));
 
+
+      }
 
 
       alert("an")
