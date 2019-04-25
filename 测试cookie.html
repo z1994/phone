@@ -23,7 +23,7 @@
     if (isAndroid == true) {
       alert("an")
       function getToken() {
-        var datajsontext = {
+        var data = {
           "nativeName": "common.app.token.get",
           "parameter": {},
           "callbackName": "common.app.token.get.resp"
@@ -52,6 +52,8 @@
       var dataCookie = '110';
       document.cookie = 'token' + "=" + dataCookie;
       alert("ios")
+      var x = document.cookie;
+      console.log(x)
     }
 
     // return isAndroid==true?true:false;
