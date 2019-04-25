@@ -99,6 +99,10 @@
           var data = {"nativeName":"common.app.token.get","parameter":{},"callbackName":"common.app.token.get.resp"};
           jsCallNative(data);
         }
+
+        getToken()
+
+
       //js调用app方法
       function jsCallNative(jsontext){
         var webjson =  JSON.stringify(jsontext);
@@ -119,8 +123,8 @@
 
 </head>
 <body style="background-color: #ffffaa;">
-<h1><a href="javascript:test();">错误提示</a></h1>
+<!-- <h1><a href="javascript:test();">错误提示</a></h1>
 <h1><a href="javascript:getToken();">获取Token</a></h1>
- 
+  -->
 </body>
 </html>
