@@ -23,7 +23,7 @@
               jsCallNative(data);
             }
     
-            getToken()
+            // getToken()
     
     
           //js调用app方法
@@ -42,12 +42,12 @@
           }
     
     
-          alert("an")
+          
     
         } else if (isiOS == true) {
     
           var dataCookie = '110';
-          document.cookie = 'token' + "=" + dataCookie;
+          window.document.cookie = 'token' + "=" + dataCookie;
           alert("ios")
           var x = document.cookie;
           console.log(x)
