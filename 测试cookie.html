@@ -89,16 +89,16 @@
   <title>测试页面</title>
 
   <script>
-    function isAndroid_ios() {
-      var u = navigator.userAgent,
-        app = navigator.appVersion;
-      var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
-      var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-      return isAndroid ? true : false
-    }
+    // function isAndroid_ios() {
+    //   var u = navigator.userAgent,
+    //     app = navigator.appVersion;
+    //   var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+    //   var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    //   return isAndroid ? true : false
+    // }
 
     
-    if (isAndroid_ios()) {
+    // if (isAndroid_ios()) {
       alert("an")
 
       function getToken() {
@@ -124,15 +124,13 @@
       function nativeCallJS(jsontext) {
         console.log("nativeCallJS=" + JSON.stringify(jsontext));
         alert("nativeCallJS=" + JSON.stringify(jsontext));
-
-
       }
-    }
-     else {
-      alert("ios")
-    }
+    // }
+    //  else {
+    //   alert("ios")
+    // }
 
-isAndroid_ios()
+// isAndroid_ios()
 
 
 
