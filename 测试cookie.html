@@ -107,17 +107,21 @@
           "parameter": {},
           "callbackName": "common.app.token.get.resp"
         };
+         alert('getToken()')
         jsCallNative(getdata);
       }
 
       getToken()
+     
 
 
       //js调用app方法
       function jsCallNative(jsontext) {
         var webjson = JSON.stringify(jsontext);
         Android.functionjsCallNative(webjson);
+        alert('js调用app方法')
       }
+      
 
 
       //app调用js方法
@@ -130,7 +134,6 @@
            alert(CallJS.parameter)
            alert(CallJS.parameter.data)
            alert(CallJS.parameter.data.album_id)
-
       }
     // }
     //  else {
