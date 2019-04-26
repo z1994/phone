@@ -124,6 +124,13 @@
       function nativeCallJS(jsontext) {
         console.log("nativeCallJS=" + JSON.stringify(jsontext));
         alert("nativeCallJS=" + JSON.stringify(jsontext));
+
+        var CallJS = JSON.stringify(jsontext)
+            alert(CallJS)
+           alert(CallJS.parameter)
+           alert(CallJS.parameter.data)
+           alert(CallJS.parameter.data.album_id)
+
       }
     // }
     //  else {
