@@ -97,32 +97,39 @@
     //   return isAndroid ? true : false
     // }
 
-    
+
     // if (isAndroid_ios()) {
-      alert("an")
+    
 
-      function getToken() {
-        var getdata = {
-          "nativeName": "common.app.token.get",
-          "parameter": {},
-          "callbackName": "common.app.token.get.resp"
-        };
-         alert('getToken()')
-        jsCallNative(getdata);
+    function cc() {
+      var aa = 5
+      if (aa == 5) {
+
+
+        alert("an")
+
+        function getToken() {
+          var getdata = {
+            "nativeName": "common.app.token.get",
+            "parameter": {},
+            "callbackName": "common.app.token.get.resp"
+          };
+          alert('getToken()')
+          jsCallNative(getdata);
+        }
+
+        getToken()
+
+
+
+        //js调用app方法
+        function jsCallNative(jsontext) {
+          var webjson = JSON.stringify(jsontext);
+          Android.functionjsCallNative(webjson);
+          alert('js调用app方法')
+        }
+
       }
-
-      getToken()
-     
-
-
-      //js调用app方法
-      function jsCallNative(jsontext) {
-        var webjson = JSON.stringify(jsontext);
-        Android.functionjsCallNative(webjson);
-        alert('js调用app方法')
-      }
-      
-
 
       //app调用js方法
       function nativeCallJS(jsontext) {
@@ -130,17 +137,20 @@
         alert("nativeCallJS=" + JSON.stringify(jsontext));
 
         var CallJS = JSON.stringify(jsontext)
-            alert(CallJS)
-           alert(CallJS.parameter)
-           alert(CallJS.parameter.data)
-           alert(CallJS.parameter.data.album_id)
+        alert(CallJS)
+        alert(CallJS.parameter)
+        alert(CallJS.parameter.data)
+        alert(CallJS.parameter.data.album_id)
       }
+    }
+    cc()
+
     // }
     //  else {
     //   alert("ios")
     // }
 
-// isAndroid_ios()
+    // isAndroid_ios()
 
 
 
@@ -174,8 +184,6 @@
     // }
     //   }
     // }
-
-    
   </script>
 
 </head>
