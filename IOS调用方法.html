@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+<div style="margin-top: 60px">
+<h2>JS与原生交互(UIWebView)</h2>
+<input type="button" value="h5唤起原生方法(call)" onclick="call()">
+</div>
+
+<script>
+    var aa=123
+    var bb=321
+    
+    
+var call = function()
+{
+    window.webkit.messageHandlers.call.postMessage("id="+aa+"token="+bb);
+}
+
+function alerCallback(str)
+{
+    alert('原生调用成功' + str);
+}
+</script>
+</body>
+</html>
