@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+// var dic = {c:4, a:2, d:3, b:1}; // 定义一个字典
+var aa='Q2H41lup'
+var bb='5E74F552-87E4-4B7E-A8B6-706028DD7988'
+var cc='2'
+var dd='Album.clickUseful'
+var ee='JEuSDJt5aaqw9muf81yh07UWYi73INsY'
+var ff='120'
+var gg='1556510034'
+
+var dic={device_id:bb,app_id:aa,device_type:cc,method:dd,nonce:ee,question_id:ff,timestamp:gg}
+
+
+
+console.log("输出最初的字典元素: "); 
+for(var key in dic){
+    console.log("key: " + key + " ,value: " + dic[key]);
+}
+
+console.log("字典元素按key值排序: ");
+var res = Object.keys(dic).sort(); 
+console.log(res)
+// sign签名算法
+console.log(res[0]+dic[res[0]]+res[1]+dic[res[1]]+res[2]+dic[res[2]]+res[3]+dic[res[3]]+res[4]+dic[res[4]]+res[5]+dic[res[5]]+res[6]+dic[res[6]])
+
+
+
+for(var key in res){
+    // console.log("key: " + res[key] + " ,value: " + dic[res[key]]);
+
+    
+    console.log(res[key]+dic[res[key]])
+}
+
+console.log("字典元素按value值排序: ");
+var res2 = Object.keys(dic).sort(function(a,b){ return dic[a]-dic[b]; });
+for(var key in res2){
+    console.log("key: " + res2[key] + " ,value: " + dic[res2[key]]);
+}
+</script>
