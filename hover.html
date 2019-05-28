@@ -6,27 +6,37 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 </head>
-<style>
-.box{
-	width: 1rem;
-	height: 1rem;
-	background: #000;
-}
-.box:hover{
-	background: red
-}
-.box1{
-	width: 1rem;
-	height: 1rem;
-	background: #000;
-}
-.box1:hover{
-	background: red
-}
-</style>
 <body>
-	<div class="box"></div>
-	<div class="box1"></div>
+	<input type="radio" id="aa">
+	<label for="aa">aa</label>
+
+	<input type="radio" id="bb">
+	<label for="bb">bb</label>
+
+	<input type="radio" id="cc">
+	<label for="cc">cc</label>
+	<button onclick="dd()">qqq</button>
+	
 	
 </body>
 </html>
+<script>
+
+
+function dd(){
+
+	var input1=document.getElementById('aa')
+	var input2=document.getElementById('bb')
+	var input3=document.getElementById('cc')
+
+
+	 	
+
+
+input1.checked= false
+input2.checked= false
+input3.checked= false
+// input.type='radio'
+}
+
+</script>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--base64打印出的内容，展示用-->
+<img src="" id="apptest" style="width: 100%;height: 50px;"/>
+<!--base64打印出的内容-->
+<!--打印内容获取，可修改样式-->
+<div id="capture" style="padding: 10px; background: #f5da55">
+	<h4 style="color: #000;font-size: 18;height: 100px;">Hello world!1212</h4>
+</div>
+<!--打印内容获取,在这里获取-->
+<img id="sharecontent"  src="./imgs/1.png"/>
+
+    
+</body>
+</html>
+
+<script src="./js/html2canvas.js"></script>
+<script src="./js/html2canvas.min.js"></script>
+<script src="./js/html2canvas.svg.js"></script>
+<script src="./js/html2canvas.svg.min.js"></script>
+<script>
+
+(function($, owner) {
+//将BASE 64保存为图片文件
+	owner.baseImgFile = function(uid, base64, quality, callback) {
+        quality = quality || 10;
+        callback = callback || $.noop;
+        var bitmap = new plus.nativeObj.Bitmap();
+        // 从本地加载Bitmap图片
+        bitmap.loadBase64Data(base64, function() {
+            //    console.log('加载图片成功');
+            bitmap.save("_doc/" + uid + ".jpg", {
+                overwrite: true,
+                quality: quality
+            }, function(i) {
+                callback(i);
+                //    console.log('保存图片成功：'+JSON.stringify(i));
+            }, function(e) {
+                console.log('保存图片失败：' + JSON.stringify(e));
+            });
+        }, function(e) {
+            console.log('加载图片失败：' + JSON.stringify(e));
+        });
+    }
+}(mui, window.app = {}));
+// 获取canvas绘制成图片的地址，调用上面的方法把地址传入
+
+$(function () {
+	html2canvas(document.getElementById("capture"), {
+	    useCORS: true,
+	    scale: window.devicePixelRatio*2, // 默认值是window.devicePixelRatio
+	    logging: false
+	});
+    
+    html2canvas(document.querySelector("#capture")).then(canvas => {
+	    document.body.appendChild(canvas);
+
+	    var imgUri = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+	    var saveLink = document.createElement( 'a');
+	    //console.log(imgUri);
+        //app.baseImgFile(文件名，base64路径，清晰度1-100，function(i){
+        // i包括文件路径file:// 格式等详情信息
+        //})
+	    app.baseImgFile('1',imgUri,70,function(i){
+	       alert(JSON.stringify(i.target));
+	       $('#apptest').attr('src',i.target);
+            //查看下文件路径是否有效
+	    });
+	}) 
+})
+
+
+</script>

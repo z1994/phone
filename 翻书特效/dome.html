@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery.min.1.7.js"></script>
+</head>
+<body>
+        <input name="rdo1" value="AA" type="radio" tag="0" />A
+        <br />
+        <input name="rdo2" value="BB" type="radio" tag="0" />B
+        <br />
+        <input name="rdo3" value="CC" type="radio" tag="0" />C
+    
+</body>
+</html>
+<script>
+$(":radio").click(function () {
+                var r = $(this).attr("name");
+                $(":radio[name=" + r + "]:not(:checked)").attr("tag", 0);
+                if ($(this).attr("tag") == 1) {
+                    $(this).attr("checked", false);
+                    $(this).attr("tag", 0);
+                }
+                else {
+                    $(this).attr("tag",1);
+                }
+            });
+</script>
