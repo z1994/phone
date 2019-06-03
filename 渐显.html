@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>原生Js元素渐隐/渐显方法</title>
+</head>
+
+<body>
+    <button id="show">渐显</button>
+    <button id="hiden">渐隐</button>
+    <img src="http://images.cnitblog.com/blog/150659/201306/20171658-303d375a1ec740e29a567b269d6297f1.jpg" id="img">
+    <script type="text/javascript">
+        function alphaPlay(obj, method) { //method有两个值show或hiden 
+            var n = (method == "show") ? 0 : 100,
+                ie = (window.ActiveXObject) ? true : false;
+            var time = setInterval(function () {
+                if (method == "show") {
+                    if (n < 100) {
+                        n += 10;
+                        if (ie) {
+                            obj.style.cssText = "filter:alpha(opacity=" + n + ")";
+                        } else {
+                            (n == 100) ? obj.style.opacity = 1: obj.style.opacity = "0." + n;
+                        }
+                    } else {
+                        clearTimeout(time);
+                    }
+                } else {
+                    if (n > 0) {
+                        n -= 10;
+                        if (ie) {
+                            obj.style.cssText = "filter:alpha(opacity=" + n + ")";
+                        } else {
+                            obj.style.opacity = "0." + n;
+                        }
+                    } else {
+                        clearTimeout(time);
+                    }
+                }
+            }, 30);
+        }
+        var img = document.getElementById("img");
+        document.getElementById("show").onclick = function () {
+            alphaPlay(img, "show");
+        }
+        document.getElementById("hiden").onclick = function () {
+            alphaPlay(img, "hiden");
+        }
+    </script>
+</body>
+
+</html>
