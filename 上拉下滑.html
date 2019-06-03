@@ -11,7 +11,7 @@
 </body>
 </html>
 <script>
- var startX, startY;
+       var startX, startY;
         document.addEventListener('touchstart',function (ev) {
             startX = ev.touches[0].pageX;
             startY = ev.touches[0].pageY;
@@ -38,4 +38,22 @@
                 default:
             }
         }, false);
+
+
+
+function GetSlideDirection(startX, startY, endX, endY) {
+      var dy = startY - endY;
+      //var dx = endX - startX;
+      var result = 0;
+      if(dy>0) {//向上滑动
+        result=1;
+      }else if(dy<0){//向下滑动
+        result=2;
+      }
+      else
+      {
+        result=0;
+      }
+      return result;
+    }
 </script>
