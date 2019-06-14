@@ -12,9 +12,8 @@
         font-size: 16px;
     }
 
-    .big {
+    /* .big {
         width: 39px;
-        ;
         height: 39px;
         position: fixed;
         bottom: 20px;
@@ -22,6 +21,14 @@
         background: #ccc;
         border-radius: 50%;
         transition: opacity 0.8s;
+    } */
+    .big-img{
+        width: 39px;
+        position: fixed;
+        bottom: 20px;
+        right: 10px;
+        transition: opacity 0.8s;
+
     }
 </style>
 
@@ -88,7 +95,9 @@
         <p>9</p>
         <p>10</p>
     </div>
-    <div class="big" onclick="ck()"></div>
+    <div >
+    <img onclick="ck()" class="big-img" src="./imgs/fangdajin.png" alt="">
+    </div>
 
 
 </body>
@@ -96,7 +105,7 @@
 </html>
 <script>
     var all = document.getElementById('all')
-    var big = document.getElementsByClassName('big')[0]
+    var big = document.getElementsByClassName('big-img')[0]
 
 
     function ck() {

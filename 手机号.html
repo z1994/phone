@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+            <input id="phone" type="text" maxlength="11" onkeyup="v()">
+
+
+
+
+        <!-- <input id="phone" type="text" maxlength="11" 
+        onkeyup="(this.v=function(){this.value=this.value.replace(/[^1(2|3|4|5|6|7|8|9)]+/,'');}).call(this)"> -->
+   
+   <!-- <input id="phone" type="text"  maxlength="11" 
+   onkeyup="checkPhone()"
+   > -->
+   <!-- onkeyup代表手指松开键盘触发的事件 -->
+    </div>
+
+    <!-- <button onclick="checkPhone()">提交</button> -->
+    
+</body>
+</html>
+<script>
+    function v(){
+        var phone=document.getElementById("phone")
+        var value=phone.value
+
+        value=value.replace(/[^1(2|3|4|5|6|7|8|9)]+/,'');
+        console.log(value)
+    }
+
+// function checkPhone(){ 
+//     var phone = document.getElementById('phone').value;
+//     if(!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(phone))){ 
+//         // alert("手机号码有误，请重填");  
+//         return false; 
+//     } 
+// }
+</script>
