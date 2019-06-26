@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -7,7 +7,7 @@
 	<title>Document</title>
 	<link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
 
-  <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+
 	<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 	<style>
 	body{
@@ -30,4 +30,110 @@
 
   <script src='https://vjs.zencdn.net/7.4.1/video.js'></script>
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+
+<body>
+
+
+</body>
+
 </html>
+<script>
+	// setTimeout(function () {
+	// 	console.log(1);
+	// 	setTimeout(function () {
+	// 		console.log(2);
+	// 		setTimeout(function () {
+	// 			console.log(3);
+	// 			setTimeout(function () {
+	// 				console.log(4);
+	// 				setTimeout(function () {
+	// 					console.log(5);
+	// 					setTimeout(function () {
+	// 						console.log(6);
+	// 						setTimeout(function () {
+	// 							console.log(7);
+	// 						}, 1000);
+	// 					}, 1000);
+	// 				}, 1000);
+	// 			}, 1000);
+	// 		}, 1000);
+	// 	}, 1000);
+	// }, 1000);
+
+
+// 	 function next( n ){
+//       return new Promise( function( resolve, reject ){
+//           setTimeout( function(){
+//               resolve( n );
+//           }, 1000 );
+//       } );
+//   }
+//   next( 1 ).then( function( res ){
+//       console.log( res );
+//      return next( 2 );	
+//  } ).then( function( res ){
+//      console.log( res );
+//      return next( 3 );
+//  } ).then( function( res ){
+//      console.log( res );
+//  } )
+
+
+//  function next(){
+//       return new Promise( function( resolve, reject ){
+//           var num = Math.floor( Math.random() * 10 );
+//           if ( num <= 5 ) {
+//               resolve( num );
+//           }else {
+//               reject( new Error() );
+//           }
+//       } );
+//  }
+//  next( 1 ).then( function( res ){
+//      console.log( res );
+//  }, function( res ){
+//      console.log( res );
+//  } );
+//  console.log( '正常执行' );
+function Parent() {
+            this.a = 1;
+            this.b = [1, 2, this.a];
+            this.c = { demo: 5 };
+            this.show = function () {
+                console.log("this.a="+this.a ,"this.b="+ this.b , "this.c.demo="+this.c.demo );
+            }
+        }
+        function Child() {
+            this.a = 2;
+            this.change = function () {
+                this.b.push(this.a);
+                this.a = this.b.length;
+                this.c.demo = this.a++;
+            }
+        }
+        Child.prototype = new Parent(); 
+        var parent = new Parent();
+        var child1 = new Child();
+        var child2 = new Child();
+        child1.a = 11;
+        child2.a = 12;
+        parent.show();
+        child1.show();
+        child2.show();
+        child1.change();
+        child2.change();
+        parent.show();
+        child1.show();
+        child2.show();
+</script>
