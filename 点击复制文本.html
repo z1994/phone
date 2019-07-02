@@ -39,11 +39,12 @@ $(".code-btn").click(function(){
         $(".alertMsg").html("复制成功！");
         $(".modal-bg").css("display", "block");
         e.clearSelection();
+        alert(11)
       });
-      clipboard.on("error", function(e){
-        $(".alertMsg").html("请选择“拷贝”进行复制!");
-        $(".modal-bg").css("display", "block");
-      });
+    //   clipboard.on("error", function(e){
+    //     $(".alertMsg").html("请选择“拷贝”进行复制!");
+    //     $(".modal-bg").css("display", "block");
+    //   });
     });
 
 </script>
