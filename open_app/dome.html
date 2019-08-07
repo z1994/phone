@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+function openApp() {
+
+const options = {
+    scheme:{
+        protocol:'ytcj',
+    },
+    intent: {
+        package: 'com.yetancaijing.app',
+        scheme: 'ytcj',
+    },
+    timeout: 2000,
+    appstore: 'https://itunes.apple.com/cn/app/%E6%8A%96%E9%9F%B3%E7%9F%AD%E8%A7%86%E9%A2%91-%E5%A5%BD%E7%8E%A9%E7%9A%84%E4%BA%BA%E9%83%BD%E5%9C%A8%E8%BF%99/id1142110895?mt=8&v0=WWW-GCCN-ITSTOP100-FREEAPPS&l=&ign-mpt=uo%3D4',
+    yingyongbao: 'https://a.app.qq.com/o/simple.jsp?pkgname=com.yetancaijing.app',
+    fallback: 'https://mobile.baidu.com/item?docid=25741609&source=s1001&from=singlemessage&isappinstalled=0',
+};
+const callLib = new CallApp(options);
+
+var id='48';
+callLib.open({
+    param: {id:parseInt(id)},
+    path: 'page/album'
+});
+}
+
+// $('.tab-name li').each(function(index,element){
+// $(this).click(function () {
+//     $('.tab-page').hide();
+//     $('.tab-page:eq('+index+')').show();
+//     $('.tab-name li').removeClass('selected');
+//     $(this).addClass('selected');
+// })
+// });
+// $('.tab-name li:eq(0)').click();
+
+
+// function playItem(ts) {
+// var f=$(ts).attr('data-res');
+// if(!f){
+//     return;
+// }
+
+// var t=$(ts).attr('data-type');
+// if(t!=0){
+//     alert('本小节非音频，暂不支持试听');
+//     return;
+// }
+// $('#player').attr('src',f);
+// var m=document.getElementById("player");
+// m.controls = false;//显示控制面板
+// m.load();//加载
+// m.play();//播放
+
+// playingStatus($(ts));
+// }
+
+// function playingStatus(jo) {
+// $('.chapter-item').find('.sort-img').hide();
+// jo.find('.sort-img').show();
+// //变更为红色，其他恢复黑色
+// $('.chapter-item').find('.chapter-item-name').removeClass('playing');
+// jo.find('.chapter-item-name').addClass('playing');
+// }
+
+// function playAll() {
+// var fArr=[];
+// var freeIndexArr=[];
+// $('.chapter-item').each(function (i,e) {
+//     var f=$(this).attr('data-res');
+//     if(f){
+//         fArr.push(f);
+//         freeIndexArr.push(i);
+//     }
+// });
+
+// console.info(fArr);
+// console.info(freeIndexArr);
+// var total=fArr.length;
+// //var arr = ["http://www.lmlblog.com/blog/bozhao/images/believe.mp3","http://www.lmlblog.com/blog/bozhao/images/shui.mp3"];               //把需要播放的歌曲从后往前排，这里已添加两首音乐，可继续添加多个音乐
+// var myAudio=document.getElementById("player");
+// myAudio.pause();
+
+// var listenIndex =freeIndexArr.shift();
+
+// playingStatus($('.chapter-item:eq('+listenIndex+')'));
+
+// myAudio.preload = true;
+// myAudio.controls = false;
+// myAudio.src = fArr.shift();
+// myAudio.addEventListener('ended', playEndedHandler, false);
+// myAudio.play();
+
+
+// myAudio.loop = false;//禁止循环，否则无法触发ended事件
+// function playEndedHandler(){
+//     var listenIndex =freeIndexArr.shift();
+//     /*
+//     $('.chapter-item').find('.sort-img').hide();
+//     $('.chapter-item:eq('+listenIndex+')').find('.sort-img').show();
+
+//     //变更为红色，其他恢复黑色
+//     $('.chapter-item').find('.chapter-item-name').removeClass('playing');
+//     $('.chapter-item:eq('+listenIndex+')').find('.chapter-item-name').addClass('playing');
+//     */
+
+//     playingStatus($('.chapter-item:eq('+listenIndex+')'));
+
+//     myAudio.src = fArr.shift();
+//     myAudio.play();
+//     console.log(fArr.length);
+//     !fArr.length && myAudio.removeEventListener('ended',playEndedHandler,false);//只有一个元素时解除绑定
+// }
+// }
+
+
+</script>
