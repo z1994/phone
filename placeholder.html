@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+// async function testSync() {
+//      const response = await new Promise(resolve => {
+//          setTimeout(() => {
+//              resolve("async await test...");
+//           }, 1000);
+//      });
+//      console.log(response);
+// }
+// testSync();//async await test...
+
+
+
+// async function asyncAwaitFn(str) {
+//     return await new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve(str)
+//         }, 1000);
+//     })
+// }
+
+// const serialFn = async () => { //串行执行
+
+//     console.time('serialFn')
+//     console.log(await asyncAwaitFn('string 1'));
+//     console.log(await asyncAwaitFn('string 2'));
+//     console.timeEnd('serialFn')
+    
+// }
+
+// serialFn();
+
+
+
+// async function asyncAwaitFn(str) {
+//     return await new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve(str)
+//         }, 1000);
+//     })
+// }
+// const parallel = async () => { //并行执行
+//     console.time('parallel')
+//     const parallelOne = asyncAwaitFn('string 1');
+//     const parallelTwo = asyncAwaitFn('string 2')
+
+//     //直接打印
+//     console.log(await parallelOne)
+//     console.log(await parallelTwo)
+
+//     console.timeEnd('parallel')
+
+
+// }
+// parallel()
+
+
+// function fn() {
+//              n = 100;
+//         }
+//         fn();
+//         console.log(n); //100
+
+
+// function fn() {
+//             n = 100;
+
+//             function fn1() {
+//                 console.log(n);
+//                 m=10
+//             }
+
+//             fn1();
+//         }
+//         fn(); 
+//         console.log(m+n)
+
+
+
+// function fn() {
+//             n = 100;
+
+//             function fn1() {
+//                 console.log(n);
+//             }
+
+//             return fn1;
+//         }
+        
+//        var result=fn();
+//        result(); //100
+
+
+// function fn() {
+//             n = 100;
+
+//             nadd = function () {
+//                 n += 1;
+//             }
+
+//             function fn1() {
+//                 console.log(n);
+//             }
+
+//             return fn1;
+//         }
+
+//         var result = fn();
+//         result(); //100
+//         nadd();
+//         result(); //101
+
+
+// (function () {
+//             var now = new Date();
+//             if (now.getMonth() == 8 && now.getDate() == 20) {
+//                 alert("新年快乐");
+//             }
+//         })();
+
+
+</script>
