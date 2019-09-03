@@ -1248,7 +1248,7 @@ function () {
     this.root = root;
     this.rate = 1;
     this.setSize();
-    var folder = controller.addFolder('保险理念测试');
+    var folder = controller.addFolder('保险理念测试11');
     this.datData = controller.addData($a87C$var$data, {
       folder: folder
     });
@@ -1474,7 +1474,7 @@ function $m6Ky$var$_createClass(Constructor, protoProps, staticProps) {
   return Constructor;
 }
 
-var $m6Ky$var$TEXT = '保险理念测试1';
+var $m6Ky$var$TEXT = '保险理念测试22';
 var $m6Ky$var$FONT_SIZE = 30;
 var $m6Ky$var$FONT_SIZE_SP = 24;
 var $m6Ky$var$FONT_SIZE_MIN = 20;
