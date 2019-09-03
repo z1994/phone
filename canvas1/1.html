@@ -9,6 +9,7 @@
       padding: 0;
       height: 100%;
       overflow: hidden;
+      background: #000;
     }
   </style>
 </head>
@@ -43,7 +44,7 @@
   // 添加粒子
   // x，y为粒子坐标，xa, ya为粒子xy轴加速度，max为连线的最大距离
   var dots = [];
-  for (var i = 0; i < 300; i++) {
+  for (var i = 0; i < 100; i++) {
     var x = Math.random() * canvas.width;
     var y = Math.random() * canvas.height;
     var xa = Math.random() * 2 - 1;
@@ -95,8 +96,8 @@
           ratio = (d2.max - dis) / d2.max;
           // 画线
           ctx.beginPath();
-          ctx.lineWidth = ratio / 2;
-          ctx.strokeStyle = 'rgba(0,0,0,' + (ratio + 0.2) + ')';
+          ctx.lineWidth = ratio*2 ;
+          ctx.strokeStyle = 'rgba(255,250,250,' + (ratio + 0.2) + ')';
           ctx.moveTo(dot.x, dot.y);
           ctx.lineTo(d2.x, d2.y);
           ctx.stroke();
