@@ -1171,8 +1171,8 @@ function $a87C$var$_createClass(Constructor, protoProps, staticProps) {
   return Constructor;
 }
 
-var $a87C$var$PER_MOUSE = 800;
-var $a87C$var$COUNT = $a87C$var$PER_MOUSE * 400;
+var $a87C$var$PER_MOUSE = 1600;
+var $a87C$var$COUNT = $a87C$var$PER_MOUSE * 800;
 var $a87C$var$MOUSE_ATTRIBUTE_COUNT = 4;
 var $a87C$var$FRONT_ATTRIBUTE_COUNT = 2;
 var $a87C$var$data = {
