@@ -1,28 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<title>Shooting Star1</title>
+    <meta charset="UTF-8">
+    <title>Shooting Star1</title>
 
 
 
-<link rel="stylesheet" href="css/style.css">
-<style>
-.login{
-    padding:2vw 0;
-    margin-left: 10vw;
-    width: 80vw;
-margin-top: 20vh;
-text-align: center;
-background: #ccc;
-}
-input{
-    width: 50%;
-    height: 30px;
-    margin-top: 2vw;
-}
-</style>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .login {
+            position: absolute;
+            padding: 2vw 0;
+            margin-left: 10vw;
+            width: 80vw;
+            top: 30vh;
+            text-align: center;
+            background: #ccc;
+            opacity: 0;
+        }
+
+        input {
+            width: 50%;
+            height: 30px;
+            margin-top: 2vw;
+        }
+    </style>
 
 
 </head>
@@ -35,14 +38,38 @@ input{
     </div>
 
 
-<canvas id="canvas"></canvas>
-<p id="message"></p>
+    <canvas id="canvas"></canvas>
+    <p id="message"></p>
 
 
-<script src='js/three.min.js'></script>
+    <!-- <script src='js/three.min.js'></script>
 <script src='js/dat.gui.min.js'></script>
 
-<script type="module" src="js/index.js"></script>
+<script type="module" src="js/index.js"></script> -->
+
+    <script>
+        var login = document.getElementsByClassName('login')[0]
+
+        var a = 0
+        login.style.opacity = a
+
+        setInterval(function aa() {
+
+            if (login.style.opacity < 1) {
+                a = a + 0.05
+                login.style.opacity = a
+
+
+                console.log(9)
+                console.log(login.style.opacity)
+                console.log(a)
+                // return (login.style.opacity)
+            } else {
+                return
+            }
+
+        }, 50)
+    </script>
 
 
 
