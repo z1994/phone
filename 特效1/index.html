@@ -43,9 +43,8 @@
 
 
     <script src='js/three.min.js'></script>
-<script src='js/dat.gui.min.js'></script>
-
-<script type="module" src="js/index.js"></script>
+    <script src='js/dat.gui.min.js'></script>
+    <script type="module" src="js/index.js"></script>
 
     <script>
         var login = document.getElementsByClassName('login')[0]
@@ -53,22 +52,43 @@
         var a = 0
         login.style.opacity = a
 
-        setInterval(function aa() {
-
-            if (login.style.opacity < 1) {
-                a = a + 0.05
-                login.style.opacity = a
 
 
-                console.log(9)
-                console.log(login.style.opacity)
-                console.log(a)
-                // return (login.style.opacity)
-            } else {
-                return
-            }
+        // setInterval(function aa() {
 
-        }, 50)
+        //     if (login.style.opacity < 1) {
+        //         a = a + 0.05
+        //         login.style.opacity = a
+
+
+        //         console.log(9)
+        //         console.log(login.style.opacity)
+        //         console.log(a)
+        //         // return (login.style.opacity)
+        //     } else {
+        //         return
+        //     }
+
+        // }, 50)
+
+        setTimeout(function bb() {
+            setInterval(function aa() {
+
+if (login.style.opacity < 1) {
+    a = a + 0.05
+    login.style.opacity = a
+
+
+    console.log(9)
+    console.log(login.style.opacity)
+    console.log(a)
+    // return (login.style.opacity)
+} else {
+    return
+}
+
+}, 50)
+        }, 2200)
     </script>
 
 
