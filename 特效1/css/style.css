@@ -13,6 +13,7 @@ body {
   display: block;
   width: 100%;
   height: 100%;
+  top: 20vw;
   z-index: -99;
 }
 body.o-start #canvas {
@@ -20,7 +21,7 @@ body.o-start #canvas {
 }
 
 #message {
-  /* position: absolute !important; */
+  position: absolute !important;
   width: 100vw !important;
   /* top: 0 !important; */
   color: rgba(255, 255, 255, 0.7);
